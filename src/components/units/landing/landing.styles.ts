@@ -21,7 +21,11 @@ export const Section02 = styled.div`
 `;
 export const Section03 = styled.div`
   width: 100%;
-  height: 900px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
   /* background-color: green; */
 `;
 export const Section04 = styled.div`
@@ -145,12 +149,14 @@ export const StackTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-bottom: 15px;
 `;
 
 export const StackTitle = styled.div`
   font-size: 40px;
   font-weight: 500;
   height: 40px;
+  padding-bottom: 80px;
 `;
 
 export const FrameworkTitle = styled.div`
@@ -164,3 +170,21 @@ export const FrameworkTitle02 = styled.div`
   padding-right: 5px;
   font-size: 25px;
 `;
+
+export const StackText = styled.div`
+  font-size: 25px;
+  font-weight: 500;
+  padding-top: 15px;
+  text-align: center;
+`;
+
+export const AboutWrapper = styled.div``;
+
+export const AboutNotion = styled.img`
+  width: 500px;
+  height: 850px;
+`;
+
+export const AboutGithub01 = styled.div``;
+
+export const AboutGithub02 = styled.div``;

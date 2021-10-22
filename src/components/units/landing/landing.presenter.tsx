@@ -26,6 +26,9 @@ import {
   StackTitle,
   FrameworkTitle,
   FrameworkTitle02,
+  StackText,
+  AboutWrapper,
+  AboutNotion,
 } from "./landing.styles";
 
 export default function LandingUI() {
@@ -69,8 +72,8 @@ export default function LandingUI() {
             <Title>프로젝트 소개</Title>
           </Fade>
           <ProjectExplanationWrapper>
-            <Fade bottom>
-              <ProjectExplanationTextWrapper>
+            <ProjectExplanationTextWrapper>
+              <Fade bottom>
                 <ProjectExplanationText>
                   본 프로젝트는 Next.js를 기반으로 제작되었으며, Chrome
                   브라우저에 최적화 되어있습니다.
@@ -79,12 +82,18 @@ export default function LandingUI() {
                   CRUD를 기반으로 회원가입, 로그인, 게시물 작성, 결제, 구매 등
                   다양한 기능을 구현하여 소셜 커뮤니티를 만들고자 하였습니다.
                 </ProjectExplanationText>
-              </ProjectExplanationTextWrapper>
-            </Fade>
+              </Fade>
+            </ProjectExplanationTextWrapper>
+
             <Fade bottom>
               <ProjectStackWrapper>
                 <ProjectLanguage>
                   <StackTitle> Language </StackTitle>
+                  <Fade bottom>
+                    <StackText>Javascript</StackText>
+                    <StackText>HTML</StackText>
+                    <StackText>CSS</StackText>
+                  </Fade>
                 </ProjectLanguage>
                 <ProjectFramework>
                   <StackTitleWrapper>
@@ -95,12 +104,32 @@ export default function LandingUI() {
                     <FrameworkTitle02> & </FrameworkTitle02>
                     <FrameworkTitle>Library</FrameworkTitle>
                   </StackTitleWrapper>
+                  <Fade bottom>
+                    <StackText>Next.js</StackText>
+                    <StackText>React & React-hooks</StackText>
+                    <StackText>React-Native</StackText>
+                    <StackText>Typescript</StackText>
+                    <StackText>Emotion</StackText>
+                    <StackText>Styled-Component</StackText>
+                  </Fade>
                 </ProjectFramework>
                 <ProjectNetwork>
-                  <StackTitle> Language </StackTitle>
+                  <StackTitle> Network </StackTitle>
+                  <Fade bottom>
+                    <StackText>GraphQL & Apollo</StackText>
+                    <StackText>Rest API & axios</StackText>
+                    <StackText>Firebase</StackText>
+                  </Fade>
                 </ProjectNetwork>
                 <ProjectGeneral>
-                  <StackTitle> Language </StackTitle>
+                  <StackTitle> Cooperation </StackTitle>
+                  <Fade bottom>
+                    <StackText>Git & Github</StackText>
+                    <StackText>Notion</StackText>
+                    <StackText>Slack</StackText>
+                    <StackText>Figma</StackText>
+                    <StackText>Zeplin</StackText>
+                  </Fade>
                 </ProjectGeneral>
               </ProjectStackWrapper>
             </Fade>
@@ -109,7 +138,10 @@ export default function LandingUI() {
       </Fade>
       <Fade bottom>
         <Section03>
-          <h1>안녕하세요</h1>
+          <Title>ABOUT ME</Title>
+          <AboutWrapper>
+            <AboutNotion></AboutNotion>
+          </AboutWrapper>
         </Section03>
       </Fade>
       <Fade bottom>
