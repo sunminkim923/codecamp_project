@@ -12,7 +12,7 @@ const withAuth = (Component: any) => (props: any) => {
     }
   });
   if (typeof window !== "undefined" && !localStorage.getItem("refreshToken")) {
-    return;
+    router.push("/login/");
   }
 
   return <Component {...props} />;

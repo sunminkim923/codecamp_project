@@ -4,18 +4,20 @@ export const Wrapper = styled.div``;
 
 export const Section01 = styled.div`
   width: 100%;
-  height: 1000px;
+  height: 950px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 100px;
 `;
 export const Section02 = styled.div`
   width: 100%;
-  height: 900px;
+  height: 950px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f7f8fb;
+  padding-top: 100px;
 `;
 export const Section03 = styled.div`
   width: 100%;
@@ -34,8 +36,8 @@ export const Section05 = styled.div`
 `;
 
 export const Title = styled.div`
-  padding-top: 100px;
-  padding-bottom: 60px;
+  /* padding-top: 100px;
+  padding-bottom: 60px; */
   font-size: 70px;
   font-weight: 500;
   text-shadow: 20px;
@@ -47,7 +49,8 @@ export const ProfileWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+
+  padding-top: 60px;
 `;
 
 export const ProfileImg = styled.img`
@@ -73,4 +76,91 @@ export const ProfileExplanationText = styled.div`
   text-align: center;
 `;
 
-export const ProjectExplanationWrapper = styled.div``;
+export const ProjectExplanationWrapper = styled.div`
+  /* border: 1px solid black; */
+`;
+
+export const ProjectExplanationTextWrapper = styled.div`
+  width: 1400px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+export const ProjectExplanationText = styled.div`
+  font-size: 25px;
+  text-align: center;
+`;
+
+export const ProjectStackWrapper = styled.div`
+  width: 1400px;
+  height: 500px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ProjectLanguage = styled.div`
+  width: 25%;
+  height: 500px;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+export const ProjectFramework = styled.div`
+  width: 25%;
+  height: 500px;
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+`;
+
+export const ProjectNetwork = styled.div`
+  width: 25%;
+  height: 500px;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+export const ProjectGeneral = styled.div`
+  width: 25%;
+  height: 500px;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+export const StackTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const StackTitle = styled.div`
+  font-size: 40px;
+  font-weight: 500;
+  height: 40px;
+`;
+
+export const FrameworkTitle = styled.div`
+  font-size: 35px;
+  font-weight: 500;
+`;
+
+export const FrameworkTitle02 = styled.div`
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 25px;
+`;

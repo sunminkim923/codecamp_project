@@ -15,6 +15,17 @@ import {
   ProfileExplanationTextWrapper,
   ProfileExplanationText,
   ProjectExplanationWrapper,
+  ProjectExplanationTextWrapper,
+  ProjectExplanationText,
+  ProjectStackWrapper,
+  ProjectLanguage,
+  ProjectFramework,
+  ProjectNetwork,
+  ProjectGeneral,
+  StackTitleWrapper,
+  StackTitle,
+  FrameworkTitle,
+  FrameworkTitle02,
 } from "./landing.styles";
 
 export default function LandingUI() {
@@ -45,8 +56,7 @@ export default function LandingUI() {
                   </ProfileExplanationText>
                   <ProfileExplanationText>
                     환영합니다. 고객경험을 넘어서 현재는 개발을 사랑하는
-                    프론트엔드 개발자 김선민입니다.
-                  </ProfileExplanationText> */}
+                    프론트엔드 개발자 김선민입니다.</ProfileExplanationText> */}
                 </ProfileExplanationTextWrapper>
               </Fade>
             </ProfileExplanationWrapper>
@@ -55,8 +65,46 @@ export default function LandingUI() {
       </Fade>
       <Fade bottom>
         <Section02>
-          <Title>프로젝트 소개</Title>
-          <ProjectExplanationWrapper></ProjectExplanationWrapper>
+          <Fade bottom>
+            <Title>프로젝트 소개</Title>
+          </Fade>
+          <ProjectExplanationWrapper>
+            <Fade bottom>
+              <ProjectExplanationTextWrapper>
+                <ProjectExplanationText>
+                  본 프로젝트는 Next.js를 기반으로 제작되었으며, Chrome
+                  브라우저에 최적화 되어있습니다.
+                </ProjectExplanationText>
+                <ProjectExplanationText>
+                  CRUD를 기반으로 회원가입, 로그인, 게시물 작성, 결제, 구매 등
+                  다양한 기능을 구현하여 소셜 커뮤니티를 만들고자 하였습니다.
+                </ProjectExplanationText>
+              </ProjectExplanationTextWrapper>
+            </Fade>
+            <Fade bottom>
+              <ProjectStackWrapper>
+                <ProjectLanguage>
+                  <StackTitle> Language </StackTitle>
+                </ProjectLanguage>
+                <ProjectFramework>
+                  <StackTitleWrapper>
+                    {/* <StackTitle> Framework </StackTitle>
+                    <StackTitle> & </StackTitle>
+                  <StackTitle> Library </StackTitle> */}
+                    <FrameworkTitle>Framework</FrameworkTitle>
+                    <FrameworkTitle02> & </FrameworkTitle02>
+                    <FrameworkTitle>Library</FrameworkTitle>
+                  </StackTitleWrapper>
+                </ProjectFramework>
+                <ProjectNetwork>
+                  <StackTitle> Language </StackTitle>
+                </ProjectNetwork>
+                <ProjectGeneral>
+                  <StackTitle> Language </StackTitle>
+                </ProjectGeneral>
+              </ProjectStackWrapper>
+            </Fade>
+          </ProjectExplanationWrapper>
         </Section02>
       </Fade>
       <Fade bottom>
