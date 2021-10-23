@@ -139,9 +139,11 @@ export default function LandingUI() {
       <Fade bottom>
         <Section03>
           <Title>ABOUT ME</Title>
-          <AboutWrapper>
-            <AboutNotion></AboutNotion>
-          </AboutWrapper>
+          <Fade bottom>
+            <AboutWrapper>
+              <AboutNotion></AboutNotion>
+            </AboutWrapper>
+          </Fade>
         </Section03>
       </Fade>
       <Fade bottom>

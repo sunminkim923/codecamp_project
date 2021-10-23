@@ -178,12 +178,16 @@ export const StackText = styled.div`
   text-align: center;
 `;
 
-export const AboutWrapper = styled.div``;
-
-export const AboutNotion = styled.img`
-  width: 500px;
-  height: 850px;
+export const AboutWrapper = styled.div`
+  margin-top: 60px;
+  width: 1400px;
+  height: 550px;
+  border: 1px solid black;
 `;
+
+export const AboutNotionWrapper = styled.div``;
+
+export const AboutNotion = styled.img``;
 
 export const AboutGithub01 = styled.div``;
 
