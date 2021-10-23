@@ -189,6 +189,10 @@ export const AboutNotionWrapper = styled.div``;
 
 export const AboutNotion = styled.img``;
 
-export const AboutGithub01 = styled.div``;
+export const AboutGithubWrapper = styled.div``;
 
-export const AboutGithub02 = styled.div``;
+export const AboutGithub = styled.div``;
+
+export const AboutBlogWrapper = styled.div``;
+
+export const AboutBlog = styled.div``;
