@@ -25,6 +25,9 @@ import {
   SubmitWrapper,
   TextLength,
   SubmitButton,
+  CommentEditWrapper,
+  RecommentWrapper,
+  CommentDeleteWrapper,
 } from "./commentlist.styles";
 import { useMutation } from "@apollo/client";
 import {
@@ -127,29 +130,35 @@ export default function CommentListItem(props: any) {
                   <Writer>{props.data.user.name}</Writer>
                   <ButtonWrapper>
                     {props.loggedInUser === props.data.user._id && (
-                      <Tooltip placement="top" title="수정하기">
-                        <CommentEdit
-                          id={props.data._id}
-                          src="/images/commentEdit.svg/"
-                          onClick={onClickEdit}
-                        />
-                      </Tooltip>
+                      <CommentEditWrapper>
+                        <Tooltip placement="top" title="수정하기">
+                          <CommentEdit
+                            id={props.data._id}
+                            src="/images/commentEdit.svg/"
+                            onClick={onClickEdit}
+                          />
+                        </Tooltip>
+                      </CommentEditWrapper>
                     )}
 
-                    <Tooltip placement="top" title="답글달기">
-                      <ReComment
-                        src="/images/commentButton.svg/"
-                        onClick={onClickRecomment}
-                      />
-                    </Tooltip>
-
-                    {props.loggedInUser === props.data.user._id && (
-                      <Tooltip placement="top" title="삭제하기">
-                        <CommentDelete
-                          src="/images/commentDelete.svg"
-                          onClick={onClickDelete}
+                    <RecommentWrapper>
+                      <Tooltip placement="top" title="답글달기">
+                        <ReComment
+                          src="/images/commentButton.svg/"
+                          onClick={onClickRecomment}
                         />
                       </Tooltip>
+                    </RecommentWrapper>
+
+                    {props.loggedInUser === props.data.user._id && (
+                      <CommentDeleteWrapper>
+                        <Tooltip placement="top" title="삭제하기">
+                          <CommentDelete
+                            src="/images/commentDelete.svg"
+                            onClick={onClickDelete}
+                          />
+                        </Tooltip>
+                      </CommentDeleteWrapper>
                     )}
                     {isModal && (
                       <Modal
@@ -172,10 +181,12 @@ export default function CommentListItem(props: any) {
         {isEdit && (
           <EditWrapper>
             <ExitWrapper>
-              <ExitButton
-                src="/images/commentDelete.svg/"
-                onClick={onClickExit}
-              />
+              <Tooltip placement="top" title="취소">
+                <ExitButton
+                  src="/images/commentDelete.svg/"
+                  onClick={onClickExit}
+                />
+              </Tooltip>
             </ExitWrapper>
             <InputWrapper>
               <CommentInput

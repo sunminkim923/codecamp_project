@@ -69,10 +69,10 @@ export default function LandingUI() {
       <Fade bottom>
         <Section02>
           <Fade bottom>
-            <Title>프로젝트 소개</Title>
+            <Title>My Stacks</Title>
           </Fade>
           <ProjectExplanationWrapper>
-            <ProjectExplanationTextWrapper>
+            {/* <ProjectExplanationTextWrapper>
               <Fade bottom>
                 <ProjectExplanationText>
                   본 프로젝트는 Next.js를 기반으로 제작되었으며, Chrome
@@ -83,7 +83,7 @@ export default function LandingUI() {
                   다양한 기능을 구현하여 소셜 커뮤니티를 만들고자 하였습니다.
                 </ProjectExplanationText>
               </Fade>
-            </ProjectExplanationTextWrapper>
+            </ProjectExplanationTextWrapper> */}
 
             <Fade bottom>
               <ProjectStackWrapper>
@@ -97,12 +97,7 @@ export default function LandingUI() {
                 </ProjectLanguage>
                 <ProjectFramework>
                   <StackTitleWrapper>
-                    {/* <StackTitle> Framework </StackTitle>
-                    <StackTitle> & </StackTitle>
-                  <StackTitle> Library </StackTitle> */}
-                    <FrameworkTitle>Framework</FrameworkTitle>
-                    <FrameworkTitle02> & </FrameworkTitle02>
-                    <FrameworkTitle>Library</FrameworkTitle>
+                    <StackTitle>Framework & Library</StackTitle>
                   </StackTitleWrapper>
                   <Fade bottom>
                     <StackText>Next.js</StackText>
@@ -148,7 +143,7 @@ export default function LandingUI() {
       </Fade>
       <Fade bottom>
         <Section04>
-          <h1>안녕하세요</h1>
+          <Title>Other Projects</Title>
         </Section04>
       </Fade>
       <Fade bottom>

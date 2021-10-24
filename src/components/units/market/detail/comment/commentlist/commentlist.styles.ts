@@ -40,20 +40,27 @@ export const Contents = styled.div`
   color: #4f4f4f;
 `;
 
-export const ButtonWrapper = styled.div``;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 export const CommentEdit = styled.img`
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 `;
 
 export const ReComment = styled.img`
   cursor: pointer;
-  padding-left: 20px;
+  width: 20px;
+  height: 20px;
 `;
 
 export const CommentDelete = styled.img`
   cursor: pointer;
-  padding-left: 20px;
+  width: 20px;
+  height: 20px;
 `;
 
 export const WritedDate = styled.div`
@@ -123,4 +130,14 @@ export const ExitWrapper = styled.div`
 
 export const ExitButton = styled.img`
   cursor: pointer;
+`;
+
+export const CommentEditWrapper = styled.div``;
+
+export const RecommentWrapper = styled.div`
+  padding-left: 20px;
+`;
+
+export const CommentDeleteWrapper = styled.div`
+  padding-left: 20px;
 `;

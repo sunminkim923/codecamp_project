@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { Modal } from "antd";
+import { Modal, Tooltip } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import {
@@ -30,6 +30,8 @@ import {
   EditSubmitWrapper,
   EditText,
   EidtSubmitButton,
+  EidtTooltopWrapper,
+  DeleteTooltipWrapper,
 } from "./recommentList.styles";
 
 export default function ReCommentListItem(props: any) {
@@ -126,17 +128,25 @@ export default function ReCommentListItem(props: any) {
                 </WriterWrapper>
                 <EditButtonWrapper>
                   {props.loggedInuser === props.data.user._id && (
-                    <EditButton
-                      src="/images/commentEdit.svg/"
-                      onClick={onClickEdit}
-                    />
+                    <EidtTooltopWrapper>
+                      <Tooltip placement="top" title="수정하기">
+                        <EditButton
+                          src="/images/commentEdit.svg/"
+                          onClick={onClickEdit}
+                        />
+                      </Tooltip>
+                    </EidtTooltopWrapper>
                   )}
 
                   {props.loggedInuser === props.data.user._id && (
-                    <DeleteButton
-                      src="/images/commentDelete.svg"
-                      onClick={onClickDelete}
-                    />
+                    <DeleteTooltipWrapper>
+                      <Tooltip placement="top" title="삭제하기">
+                        <DeleteButton
+                          src="/images/commentDelete.svg"
+                          onClick={onClickDelete}
+                        />
+                      </Tooltip>
+                    </DeleteTooltipWrapper>
                   )}
                   {isModal && (
                     <Modal
@@ -158,10 +168,12 @@ export default function ReCommentListItem(props: any) {
       {isEdit && (
         <EditWrapper>
           <ExitButtonWrapper>
-            <ExitButton
-              src="/images/commentDelete.svg/"
-              onClick={onClickExit}
-            />
+            <Tooltip placement="top" title="취소">
+              <ExitButton
+                src="/images/commentDelete.svg/"
+                onClick={onClickExit}
+              />
+            </Tooltip>
           </ExitButtonWrapper>
           <EditCommentWrapper>
             <ArrowImg src="/images/arrow_comment.png/" />

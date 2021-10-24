@@ -17,7 +17,7 @@ export default function LayoutBannerUI() {
   return (
     <Header>
       <Slider {...settings}>
-        <IMG_1 src="/images/banner01.jpg/" />
+        <IMG_1 src="/images/banner03.jpg/" />
         {/* <IMG_2 src="/images/porsche02.png/" />
         <IMG_1 src="/images/porsche03.png/" />
         <IMG_2 src="/images/porsche01.png/" />

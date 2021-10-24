@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { Tooltip } from "antd";
 import {
   Wrapper,
   Arrow,
@@ -15,10 +16,12 @@ export default function RecommnetWriteUI(props) {
   return (
     <>
       <ExitWrapper>
-        <ExitButton
-          src="/images/commentDelete.svg"
-          onClick={props.onClickExit}
-        />
+        <Tooltip placement="top" title="취소">
+          <ExitButton
+            src="/images/commentDelete.svg"
+            onClick={props.onClickExit}
+          />
+        </Tooltip>
       </ExitWrapper>
       <Wrapper>
         <Arrow src="/images/arrow_comment.png" />

@@ -3,7 +3,6 @@ import {
   Header,
   Main,
   List,
-  Game,
   UsedMarket,
   Mypage,
   HeightLine,

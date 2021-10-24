@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Header = styled.div`
   width: 100%;
-  height: 120px;
+  height: 70px;
   background-color: white;
   display: flex;
   align-items: center;
@@ -23,31 +23,30 @@ export const UserWrapper = styled.div`
 `;
 
 export const ProfileImg = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
 `;
 
 export const Text = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 `;
 
 export const HeightLine = styled.div`
-  width: 1px;
-  height: 30px;
-  border: 1px solid black;
+  width: 0.5px;
+  height: 12px;
+  margin-right: 15px;
+  margin-left: 15px;
+  border-left: 0.5px solid black;
 `;
 
 export const UserPoint = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-size: 16px;
+  font-weight: 700;
+  /* letter-spacing: 1px; */
   color: #ffd600;
   cursor: pointer;
 `;

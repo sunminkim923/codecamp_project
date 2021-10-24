@@ -30,7 +30,11 @@ export const Section03 = styled.div`
 `;
 export const Section04 = styled.div`
   width: 100%;
-  height: 900px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
   background-color: #f7f8fb;
 `;
 export const Section05 = styled.div`
@@ -98,82 +102,79 @@ export const ProjectExplanationText = styled.div`
 `;
 
 export const ProjectStackWrapper = styled.div`
-  width: 1400px;
+  width: 1370px;
   height: 500px;
-  padding-top: 50px;
+  padding-top: 70px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 `;
 
 export const ProjectLanguage = styled.div`
-  width: 25%;
+  width: 320px;
   height: 500px;
-  background-color: green;
+  background-color: lightgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 35px;
+  border-radius: 20px;
 `;
 
 export const ProjectFramework = styled.div`
-  width: 25%;
+  width: 320px;
   height: 500px;
-  background-color: purple;
+  background-color: lightgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 25px;
+  padding-top: 35px;
+  border-radius: 20px;
 `;
 
 export const ProjectNetwork = styled.div`
-  width: 25%;
+  width: 320px;
   height: 500px;
-  background-color: orange;
+  background-color: lightgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 35px;
+  border-radius: 20px;
 `;
 
 export const ProjectGeneral = styled.div`
-  width: 25%;
+  width: 320px;
   height: 500px;
-  background-color: blue;
+  background-color: lightgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 35px;
+  border-radius: 20px;
 `;
 
 export const StackTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 15px;
 `;
 
 export const StackTitle = styled.div`
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 500;
   height: 40px;
-  padding-bottom: 80px;
+  padding-bottom: 70px;
 `;
 
 export const FrameworkTitle = styled.div`
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 500;
-`;
-
-export const FrameworkTitle02 = styled.div`
-  padding-top: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 25px;
 `;
 
 export const StackText = styled.div`
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   padding-top: 15px;
   text-align: center;
 `;

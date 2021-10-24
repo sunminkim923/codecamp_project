@@ -51,12 +51,15 @@ export const CreatedAt = styled.div`
   color: #bdbdbd;
 `;
 
-export const EditButtonWrapper = styled.div``;
+export const EditButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 export const DeleteButton = styled.img`
-  /* width: 20px;
-  height: 20px; */
-  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+
   cursor: pointer;
 `;
 
@@ -129,4 +132,10 @@ export const ExitButtonWrapper = styled.div`
 
 export const ExitButton = styled.img`
   cursor: pointer;
+`;
+
+export const EidtTooltopWrapper = styled.div``;
+
+export const DeleteTooltipWrapper = styled.div`
+  padding-left: 20px;
 `;
