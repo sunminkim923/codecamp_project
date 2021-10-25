@@ -123,6 +123,7 @@ export default function CommentWrite(props) {
       onEdit={onEdit}
       data={props.data}
       commentLength={commentLength}
+      onClickExit={props.onClickExit}
     />
   );
 }

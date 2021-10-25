@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { useMutation, useQuery } from "@apollo/client";
-import { Modal } from "antd";
+import { Modal, Tooltip } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import CommentWrite from "../commentWrite/commentWrite.container";
@@ -75,6 +75,10 @@ export default function CommentListItem(props) {
     setPassword(event.target.value);
   };
 
+  const onClickExit = () => {
+    setIsEdit(false);
+  };
+
   return (
     <Wrapper key={props.data._id}>
       <HeadWrapper>
@@ -86,14 +90,19 @@ export default function CommentListItem(props) {
               <StarPoint value={props.data.rating} />
             </WriterWrapper>
             <ButtonWrapper>
-              <EditButton
-                src="/images/commentEdit.svg/"
-                onClick={onClickEdit}
-              />
-              <DeleteButton
-                src="/images/commentDelete.svg/"
-                onClick={onClickDelete}
-              />
+              <Tooltip placement="top" title="수정하기">
+                <EditButton
+                  src="/images/commentEdit.svg/"
+                  onClick={onClickEdit}
+                />
+              </Tooltip>
+              <Tooltip placement="top" title="삭제하기">
+                <DeleteButton
+                  src="/images/commentDelete.svg/"
+                  onClick={onClickDelete}
+                />
+              </Tooltip>
+
               {isModal && (
                 <Modal
                   title="댓글삭제"
@@ -114,7 +123,12 @@ export default function CommentListItem(props) {
       </HeadWrapper>
       <CreateDate>{props.data?.createdAt}</CreateDate>
       {isEdit && (
-        <CommentWrite isEdit={isEdit} data={props.data} setIsEdit={setIsEdit} />
+        <CommentWrite
+          isEdit={isEdit}
+          data={props.data}
+          setIsEdit={setIsEdit}
+          onClickExit={onClickExit}
+        />
       )}
       <UnderLine />
     </Wrapper>

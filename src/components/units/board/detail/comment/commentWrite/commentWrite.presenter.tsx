@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { Modal } from "antd";
+import { Modal, Tooltip } from "antd";
 import {
   PageWrapper,
   Wrapper,
@@ -14,10 +14,11 @@ import {
   BottomWrapper,
   TextLength,
   SubmitButton,
+  ExitButton,
+  TopWrapper,
 } from "./commentWrite.styles";
 
 export default function CommentWriteUI(props) {
-  
   return (
     <PageWrapper>
       <form
@@ -32,26 +33,49 @@ export default function CommentWriteUI(props) {
               <Title>댓글</Title>
             </HeadWrapper>
           )}
-          <WriterWrapper>
-            <WriterInput
-              type="text"
-              placeholder="작성자"
-              {...props.register("writer")}
-              onChange={props.onChangeInputWriter}
-              value={props.inputWriter}
-            />
-            <WriterInput
-              type="password"
-              placeholder="비밀번호"
-              {...props.register("password")}
-              onChange={props.onChangeInputPassword}
-              value={props.inputPassword}
-            />
-            <StarPoint
-              onChange={props.onChangeRating}
-              value={props.inputRating}
-            />
-          </WriterWrapper>
+
+          <TopWrapper>
+            <WriterWrapper>
+              {!props.isEdit ? (
+                <WriterInput
+                  type="text"
+                  placeholder="작성자"
+                  {...props.register("writer")}
+                  onChange={props.onChangeInputWriter}
+                />
+              ) : (
+                <WriterInput
+                  type="text"
+                  placeholder="작성자"
+                  {...props.register("writer")}
+                  onChange={props.onChangeInputWriter}
+                  defaultValue={props.data?.writer}
+                  readOnly
+                />
+              )}
+
+              <WriterInput
+                type="password"
+                placeholder="비밀번호"
+                {...props.register("password")}
+                onChange={props.onChangeInputPassword}
+                value={props.inputPassword}
+              />
+              <StarPoint
+                onChange={props.onChangeRating}
+                value={props.inputRating}
+              />
+            </WriterWrapper>
+            {props.isEdit && (
+              <Tooltip placement="top" title="취소">
+                <ExitButton
+                  src="/images/commentDelete.svg/"
+                  onClick={props.onClickExit}
+                />
+              </Tooltip>
+            )}
+          </TopWrapper>
+
           <InputWrapper>
             <Input
               type="text"

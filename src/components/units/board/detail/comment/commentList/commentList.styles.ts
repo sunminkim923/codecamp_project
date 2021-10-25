@@ -51,7 +51,7 @@ export const EditButton = styled.img`
 
 export const DeleteButton = styled.img`
   cursor: pointer;
-  padding-left: 16px;
+  margin-left: 16px;
 `;
 
 export const Contents = styled.div`
