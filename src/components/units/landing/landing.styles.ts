@@ -290,6 +290,11 @@ export const ProjectBoardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  :hover {
+    background-color: lightcoral;
+    cursor: pointer;
+    transition: 0.5s;
+  }
 `;
 
 export const ProjectMarketWrapper = styled.div`
@@ -301,6 +306,11 @@ export const ProjectMarketWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  :hover {
+    background-color: lightcoral;
+    cursor: pointer;
+    transition: 0.5s;
+  }
 `;
 
 export const ProjectNativeWrapper = styled.div`
@@ -312,12 +322,18 @@ export const ProjectNativeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  :hover {
+    background-color: lightcoral;
+    cursor: pointer;
+    transition: 0.5s;
+  }
 `;
 
 export const ProjectsImg = styled.img`
-  width: 220x;
-  height: 220px;
+  width: 230x;
+  height: 230px;
   margin-top: 20px;
+  border-radius: 20px;
 `;
 
 export const MyProjectStackWrapper = styled.div`
@@ -331,13 +347,15 @@ export const MyProjectStackWrapper = styled.div`
 `;
 
 export const MyProjectStackTitle = styled.div`
-  text-align: center;
   font-size: 20px;
   font-weight: 600;
-  /* padding-bottom: 10px; */
   width: 150px;
-  /* border: 1px solid blue; */
-  background-color: lightgray;
+  height: 40px;
+  background-color: #5227ff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const MyProjectStackTextWrapper = styled.div`

@@ -40,7 +40,7 @@ export default function LoginUI(props: any) {
       <PageWrapper>
         <Wrapper>
           <form onSubmit={props.handleSubmit(props.onSubmit)}>
-            <Title>code.camp</Title>
+            <Title>MOCAR</Title>
             <EmailInput
               type="text"
               placeholder="이메일을 입력하세요"

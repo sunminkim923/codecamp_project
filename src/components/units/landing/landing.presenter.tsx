@@ -43,8 +43,11 @@ import {
   MyProjectStackTextWrapper,
   MyProjectStackText,
 } from "./landing.styles";
+import { useRouter } from "next/router";
 
 export default function LandingUI() {
+  const router = useRouter();
+
   const onClickNotion = () => {
     window.open(
       "https://innovative-canid-3bc.notion.site/9afec31c4db04d079b67bf605cfd3244"
@@ -57,6 +60,14 @@ export default function LandingUI() {
 
   const onClickBlog = () => {
     window.open("https://velog.io/@tjsals0406");
+  };
+
+  const onClickBoard = () => {
+    router.push("/board/list");
+  };
+
+  const onClickMarket = () => {
+    router.push("/market/list");
   };
 
   return (
@@ -195,7 +206,7 @@ export default function LandingUI() {
           <Title>MY PROJECTS</Title>
           <ProjectsWrapper>
             <Fade bottom>
-              <ProjectBoardWrapper>
+              <ProjectBoardWrapper onClick={onClickBoard}>
                 <MyProjectStackTitle> 자유게시판 </MyProjectStackTitle>
                 <ProjectsImg src="/images/myprofile/test01.jpg" />
                 <MyProjectStackWrapper>
@@ -212,7 +223,7 @@ export default function LandingUI() {
               </ProjectBoardWrapper>
             </Fade>
             <Fade bottom>
-              <ProjectMarketWrapper>
+              <ProjectMarketWrapper onClick={onClickMarket}>
                 <MyProjectStackTitle> 중고마켓 </MyProjectStackTitle>
                 <ProjectsImg src="/images/myprofile/test02.jpg" />
                 <MyProjectStackWrapper>

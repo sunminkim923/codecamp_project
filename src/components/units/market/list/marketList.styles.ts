@@ -5,7 +5,7 @@ export const PageWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 80px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   padding-left: 212px;
   height: 100%;
 `;

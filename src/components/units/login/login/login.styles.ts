@@ -7,6 +7,7 @@ export const PageWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 100px;
 `;
 
 export const Wrapper = styled.div`
