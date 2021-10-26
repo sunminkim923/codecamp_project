@@ -37,11 +37,6 @@ export const Section04 = styled.div`
   padding-top: 100px;
   background-color: #f7f8fb;
 `;
-export const Section05 = styled.div`
-  width: 100%;
-  height: 900px;
-  /* background-color: purple; */
-`;
 
 export const Title = styled.div`
   /* padding-top: 100px;
@@ -180,20 +175,79 @@ export const StackText = styled.div`
 `;
 
 export const AboutWrapper = styled.div`
-  margin-top: 60px;
+  margin-top: 80px;
   width: 1400px;
   height: 550px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
-export const AboutNotionWrapper = styled.div``;
+export const AboutNotionWrapper = styled.div`
+  width: 300px;
+  height: 400px;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
 
-export const AboutNotion = styled.img``;
+export const AboutNotion = styled.img`
+  width: 200px;
+  height: 200px;
+`;
 
-export const AboutGithubWrapper = styled.div``;
+export const AboutGithubWrapper = styled.div`
+  width: 300px;
+  height: 400px;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
 
-export const AboutGithub = styled.div``;
+export const AboutGithub = styled.img`
+  width: 200px;
+  height: 200px;
+`;
 
-export const AboutBlogWrapper = styled.div``;
+export const AboutBlogWrapper = styled.div`
+  width: 300px;
+  height: 400px;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
 
-export const AboutBlog = styled.div``;
+export const AboutBlog = styled.img`
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+`;
+
+export const DetailButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 80px;
+  cursor: pointer;
+  :hover {
+    width: 180px;
+    height: 60px;
+    background-color: orange;
+    transition: 0.5s;
+  }
+`;

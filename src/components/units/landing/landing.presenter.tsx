@@ -7,7 +7,6 @@ import {
   Section02,
   Section03,
   Section04,
-  Section05,
   Title,
   ProfileWrapper,
   ProfileImg,
@@ -15,8 +14,6 @@ import {
   ProfileExplanationTextWrapper,
   ProfileExplanationText,
   ProjectExplanationWrapper,
-  ProjectExplanationTextWrapper,
-  ProjectExplanationText,
   ProjectStackWrapper,
   ProjectLanguage,
   ProjectFramework,
@@ -24,17 +21,30 @@ import {
   ProjectGeneral,
   StackTitleWrapper,
   StackTitle,
-  FrameworkTitle,
-  FrameworkTitle02,
   StackText,
   AboutWrapper,
+  AboutNotionWrapper,
   AboutNotion,
+  AboutGithubWrapper,
+  AboutGithub,
+  AboutBlogWrapper,
+  AboutBlog,
+  DetailButton,
 } from "./landing.styles";
 
 export default function LandingUI() {
-  const onClickButton = () => {
-    // location.href = "https://www.naver.com/";
-    window.open("https://www.naver.com/");
+  const onClickNotion = () => {
+    window.open(
+      "https://innovative-canid-3bc.notion.site/9afec31c4db04d079b67bf605cfd3244"
+    );
+  };
+
+  const onClickGithub = () => {
+    window.open("https://github.com/sunminkim923");
+  };
+
+  const onClickBlog = () => {
+    window.open("https://velog.io/@tjsals0406");
   };
 
   return (
@@ -136,7 +146,33 @@ export default function LandingUI() {
           <Title>ABOUT ME</Title>
           <Fade bottom>
             <AboutWrapper>
-              <AboutNotion></AboutNotion>
+              <AboutNotionWrapper>
+                <AboutNotion src="/images/myprofile/notion.png" />
+                <Fade bottom>
+                  <DetailButton onClick={onClickNotion}>
+                    {" "}
+                    이력서 자세히 보기{" "}
+                  </DetailButton>
+                </Fade>
+              </AboutNotionWrapper>
+              <AboutGithubWrapper>
+                <AboutGithub src="/images/myprofile/github.png" />
+                <Fade bottom>
+                  <DetailButton onClick={onClickGithub}>
+                    {" "}
+                    Github 자세히 보기{" "}
+                  </DetailButton>
+                </Fade>
+              </AboutGithubWrapper>
+              <AboutBlogWrapper>
+                <AboutBlog src="/images/myprofile/velog.jpeg" />
+                <Fade bottom>
+                  <DetailButton onClick={onClickBlog}>
+                    {" "}
+                    블로그 자세히 보기{" "}
+                  </DetailButton>
+                </Fade>
+              </AboutBlogWrapper>
             </AboutWrapper>
           </Fade>
         </Section03>
@@ -145,11 +181,6 @@ export default function LandingUI() {
         <Section04>
           <Title>Other Projects</Title>
         </Section04>
-      </Fade>
-      <Fade bottom>
-        <Section05>
-          <h1>안녕하세요</h1>
-        </Section05>
       </Fade>
     </Wrapper>
   );
