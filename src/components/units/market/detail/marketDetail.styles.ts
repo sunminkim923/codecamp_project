@@ -191,3 +191,13 @@ export const MapAddress = styled.div`
   font-size: 16px;
   padding-bottom: 20px;
 `;
+
+export const SellerName = styled.div`
+  font-size: 16px;
+  font-weight: 700;
+`;
+
+export const SellerDate = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+`;

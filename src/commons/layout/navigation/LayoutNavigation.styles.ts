@@ -21,10 +21,6 @@ export const Main = styled.div`
   font-size: 20px;
   font-weight: 500;
   color: white;
-  :hover {
-    color: tomato;
-    transition: 0.5s;
-  }
 `;
 
 export const List = styled.div`

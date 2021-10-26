@@ -25,7 +25,7 @@ export const Section03 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 120px;
   /* background-color: green; */
 `;
 export const Section04 = styled.div`
@@ -66,9 +66,9 @@ export const ProfileExplanationWrapper = styled.div`
 `;
 
 export const ProfileExplanationTextWrapper = styled.div`
-  width: 750px;
+  width: 1000px;
   height: 500px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -76,6 +76,7 @@ export const ProfileExplanationTextWrapper = styled.div`
 
 export const ProfileExplanationText = styled.div`
   font-size: 20px;
+  font-weight: 500;
   text-align: center;
 `;
 
@@ -250,4 +251,104 @@ export const DetailButton = styled.div`
     background-color: orange;
     transition: 0.5s;
   }
+`;
+
+export const TopButton = styled.div`
+  margin-left: 40px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bdbdbd;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bdbdbd;
+  :hover {
+    background-color: orange;
+    transition: 0.5s;
+  }
+`;
+
+export const ProjectsWrapper = styled.div`
+  margin-top: 80px;
+  width: 1400px;
+  height: 550px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const ProjectBoardWrapper = styled.div`
+  width: 350px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+export const ProjectMarketWrapper = styled.div`
+  width: 350px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+export const ProjectNativeWrapper = styled.div`
+  width: 350px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+export const ProjectsImg = styled.img`
+  width: 220x;
+  height: 220px;
+  margin-top: 20px;
+`;
+
+export const MyProjectStackWrapper = styled.div`
+  width: 250px;
+  height: 250px;
+  /* border: 1px solid red; */
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const MyProjectStackTitle = styled.div`
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  /* padding-bottom: 10px; */
+  width: 150px;
+  /* border: 1px solid blue; */
+  background-color: lightgray;
+`;
+
+export const MyProjectStackTextWrapper = styled.div`
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MyProjectStackText = styled.div`
+  padding-top: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 10px;
 `;

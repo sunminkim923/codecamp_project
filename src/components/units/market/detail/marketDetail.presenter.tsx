@@ -31,6 +31,8 @@ import {
   DeleteButton,
   BuyButton,
   MapAddress,
+  SellerName,
+  SellerDate,
 } from "./marketDetail.styles";
 import CommentWrite from "./comment/commentwrite/commentwrite.container";
 import CommentList from "./comment/commentlist/commentlist.container";
@@ -48,8 +50,12 @@ export default function MarketDetailUI(props) {
             <ProfileWrapper>
               <Profile src="/images/profile.svg" />
               <WriterWrapper>
-                <div>{props.data?.fetchUseditem.seller?.name}</div>
-                <div>{getDate(props.data?.fetchUseditem.createdAt)}</div>
+                <SellerName>
+                  {props.data?.fetchUseditem.seller?.name}
+                </SellerName>
+                <SellerDate>
+                  {getDate(props.data?.fetchUseditem.createdAt)}
+                </SellerDate>
               </WriterWrapper>
             </ProfileWrapper>
             <LocationWrapper>

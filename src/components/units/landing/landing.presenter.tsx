@@ -1,5 +1,7 @@
 //@ts-ignore
 import Fade from "react-reveal/Fade";
+import { BackTop } from "antd";
+import { ArrowUpOutlined } from "@ant-design/icons";
 
 import {
   Wrapper,
@@ -30,6 +32,16 @@ import {
   AboutBlogWrapper,
   AboutBlog,
   DetailButton,
+  TopButton,
+  ProjectsWrapper,
+  ProjectBoardWrapper,
+  ProjectMarketWrapper,
+  ProjectNativeWrapper,
+  ProjectsImg,
+  MyProjectStackWrapper,
+  MyProjectStackTitle,
+  MyProjectStackTextWrapper,
+  MyProjectStackText,
 } from "./landing.styles";
 
 export default function LandingUI() {
@@ -60,16 +72,17 @@ export default function LandingUI() {
               <Fade bottom>
                 <ProfileExplanationTextWrapper>
                   <ProfileExplanationText>
-                    환영합니다. 고객경험을 넘어서 현재는 개발을 사랑하는
-                    프론트엔드 개발자 김선민입니다.
-                  </ProfileExplanationText>
-                  {/* <ProfileExplanationText>
-                    환영합니다. 고객경험을 넘어서 현재는 개발을 사랑하는
+                    안녕하세요. 고객경험을 넘어서 현재는 개발을 사랑하는
                     프론트엔드 개발자 김선민입니다.
                   </ProfileExplanationText>
                   <ProfileExplanationText>
-                    환영합니다. 고객경험을 넘어서 현재는 개발을 사랑하는
-                    프론트엔드 개발자 김선민입니다.</ProfileExplanationText> */}
+                    고객경험을 바탕으로 클라이언트 입장에서 서비스를 구현해보고
+                    싶어서 개발을 시작하게 되었습니다.
+                  </ProfileExplanationText>
+                  <ProfileExplanationText>
+                    단순히 코드를 작성하는 개발자가 아니라, 문제를 지혜롭게
+                    해결해 나가는 개발자로 성장하길 희망합니다.
+                  </ProfileExplanationText>
                 </ProfileExplanationTextWrapper>
               </Fade>
             </ProfileExplanationWrapper>
@@ -179,9 +192,69 @@ export default function LandingUI() {
       </Fade>
       <Fade bottom>
         <Section04>
-          <Title>Other Projects</Title>
+          <Title>MY PROJECTS</Title>
+          <ProjectsWrapper>
+            <Fade bottom>
+              <ProjectBoardWrapper>
+                <MyProjectStackTitle> 자유게시판 </MyProjectStackTitle>
+                <ProjectsImg src="/images/myprofile/test01.jpg" />
+                <MyProjectStackWrapper>
+                  {/* <MyProjectStackTitle> 자유게시판 </MyProjectStackTitle> */}
+                  <MyProjectStackTextWrapper>
+                    <Fade bottom>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                    </Fade>
+                  </MyProjectStackTextWrapper>
+                </MyProjectStackWrapper>
+              </ProjectBoardWrapper>
+            </Fade>
+            <Fade bottom>
+              <ProjectMarketWrapper>
+                <MyProjectStackTitle> 중고마켓 </MyProjectStackTitle>
+                <ProjectsImg src="/images/myprofile/test02.jpg" />
+                <MyProjectStackWrapper>
+                  {/* <MyProjectStackTitle> 중고마켓 </MyProjectStackTitle> */}
+                  <MyProjectStackTextWrapper>
+                    <Fade bottom>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                    </Fade>
+                  </MyProjectStackTextWrapper>
+                </MyProjectStackWrapper>
+              </ProjectMarketWrapper>
+            </Fade>
+            <Fade bottom>
+              <ProjectNativeWrapper>
+                <MyProjectStackTitle> 산책가까? </MyProjectStackTitle>
+                <ProjectsImg src="/images/myprofile/test02.jpg" />
+                <MyProjectStackWrapper>
+                  {/* <MyProjectStackTitle> 산책가까? </MyProjectStackTitle> */}
+                  <MyProjectStackTextWrapper>
+                    <Fade bottom>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                      <MyProjectStackText> - Next.js </MyProjectStackText>
+                    </Fade>
+                  </MyProjectStackTextWrapper>
+                </MyProjectStackWrapper>
+              </ProjectNativeWrapper>
+            </Fade>
+          </ProjectsWrapper>
         </Section04>
       </Fade>
+      <BackTop>
+        <TopButton>
+          <ArrowUpOutlined />
+        </TopButton>
+      </BackTop>
     </Wrapper>
   );
 }
