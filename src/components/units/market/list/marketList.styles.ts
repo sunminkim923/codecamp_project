@@ -31,7 +31,7 @@ export const BestProduct = styled.div`
   width: 282px;
   height: 391px;
   border-radius: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -39,6 +39,7 @@ export const BestProduct = styled.div`
   :hover {
     background-color: #ffd600;
     transition: 0.5s;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.4);
   }
   cursor: pointer;
 `;
@@ -146,6 +147,7 @@ export const SearchInput = styled.input`
   background-color: #f2f2f2;
   font-size: 16px;
   padding-left: 40px;
+  border-radius: 10px;
 `;
 
 export const SearchDate = styled.div`

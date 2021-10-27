@@ -13,7 +13,8 @@ export const SubWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  padding-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 10px;
   font-size: 36px;
   font-weight: 700;
   color: white;

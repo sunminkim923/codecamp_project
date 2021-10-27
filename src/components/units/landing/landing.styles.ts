@@ -116,7 +116,7 @@ export const ProjectLanguage = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 `;
 
 export const ProjectFramework = styled.div`
@@ -128,7 +128,7 @@ export const ProjectFramework = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 `;
 
 export const ProjectNetwork = styled.div`
@@ -140,7 +140,7 @@ export const ProjectNetwork = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 `;
 
 export const ProjectGeneral = styled.div`
@@ -152,7 +152,7 @@ export const ProjectGeneral = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 `;
 
 export const StackTitleWrapper = styled.div`
@@ -244,17 +244,16 @@ export const DetailButton = styled.div`
   width: 160px;
   height: 50px;
   text-align: center;
-  border: 1px solid black;
   border-radius: 20px;
   font-size: 16px;
   font-weight: 500;
   margin-top: 80px;
   cursor: pointer;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   :hover {
     background-color: orange;
     transition: 0.5s;
-    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -269,7 +268,7 @@ export const TopButton = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #bdbdbd;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
   :hover {
     background-color: orange;
     transition: 0.5s;
@@ -290,54 +289,54 @@ export const ProjectsWrapper = styled.div`
 export const ProjectBoardWrapper = styled.div`
   width: 350px;
   height: 550px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   :hover {
     background-color: lightcoral;
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 
 export const ProjectMarketWrapper = styled.div`
   width: 350px;
   height: 550px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   :hover {
     background-color: lightcoral;
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 
 export const ProjectNativeWrapper = styled.div`
   width: 350px;
   height: 550px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   :hover {
     background-color: lightcoral;
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 
