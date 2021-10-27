@@ -1,7 +1,7 @@
 import Slider from "@ant-design/react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Header, IMG_1, IMG_2 } from "./LayoutBanner.styles";
+import { Header, ImgItem } from "./LayoutBanner.styles";
 
 export default function LayoutBannerUI() {
   const settings = {
@@ -17,12 +17,8 @@ export default function LayoutBannerUI() {
   return (
     <Header>
       <Slider {...settings}>
-        <IMG_1 src="/images/testbanner.jpg/" />
-        {/* <IMG_2 src="/images/porsche02.png/" />
-        <IMG_1 src="/images/porsche03.png/" />
-        <IMG_2 src="/images/porsche01.png/" />
-        <IMG_1 src="/images/porsche02.png/" />
-        <IMG_2 src="/images/porsche03.png/" /> */}
+        <ImgItem src="/images/testbanner.jpg/" />
+        <ImgItem src="/images/testbanner.jpg/" />
       </Slider>
     </Header>
   );
