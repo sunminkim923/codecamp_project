@@ -1,14 +1,29 @@
-import { Wrapper, ContentsWrapper, Contents } from "./LayoutFooter.styles";
+import {
+  Wrapper,
+  SubWrapper,
+  ContentsWrapper,
+  Contents,
+  Title,
+  Underline,
+  Copyright,
+  Version,
+} from "./LayoutFooter.styles";
 
 export default function LayoutFooterUI() {
   return (
     <Wrapper>
-      <ContentsWrapper>
-        <Contents>Phone : 010 - 4442 - 6120</Contents>
-        <Contents>Email : tjsals0406 @ gmail.com</Contents>
-        <Contents>Github : https://github.com/sunminkim923 </Contents>
-        <Contents></Contents>
-      </ContentsWrapper>
+      <SubWrapper>
+        <Title> MOCAR</Title>
+        <ContentsWrapper>
+          <Contents> 제작자 : 김선민</Contents>
+          <Contents> 연락처 : 010 - 4442 - 6120</Contents>
+          <Contents> 이메일 : tjsals0406 @ gmail.com</Contents>
+          <Contents> 깃허브 : https://github.com/sunminkim923 </Contents>
+          <Version> 2.0.1 ver. </Version>
+        </ContentsWrapper>
+        <Underline />
+        <Copyright>Copyright © All Rights Reserved </Copyright>
+      </SubWrapper>
     </Wrapper>
   );
 }

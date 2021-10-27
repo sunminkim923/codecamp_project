@@ -59,6 +59,7 @@ export const ProfileWrapper = styled.div`
 export const ProfileImg = styled.img`
   width: 380px;
   border-radius: 40px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 `;
 
 export const ProfileExplanationWrapper = styled.div`
@@ -115,6 +116,7 @@ export const ProjectLanguage = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 `;
 
 export const ProjectFramework = styled.div`
@@ -126,6 +128,7 @@ export const ProjectFramework = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 `;
 
 export const ProjectNetwork = styled.div`
@@ -137,6 +140,7 @@ export const ProjectNetwork = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 `;
 
 export const ProjectGeneral = styled.div`
@@ -148,6 +152,7 @@ export const ProjectGeneral = styled.div`
   align-items: center;
   padding-top: 35px;
   border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 `;
 
 export const StackTitleWrapper = styled.div`
@@ -245,11 +250,11 @@ export const DetailButton = styled.div`
   font-weight: 500;
   margin-top: 80px;
   cursor: pointer;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   :hover {
-    width: 180px;
-    height: 60px;
     background-color: orange;
     transition: 0.5s;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -264,6 +269,7 @@ export const TopButton = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #bdbdbd;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
   :hover {
     background-color: orange;
     transition: 0.5s;
@@ -290,10 +296,12 @@ export const ProjectBoardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   :hover {
     background-color: lightcoral;
     cursor: pointer;
     transition: 0.5s;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -306,10 +314,12 @@ export const ProjectMarketWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   :hover {
     background-color: lightcoral;
     cursor: pointer;
     transition: 0.5s;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -322,10 +332,12 @@ export const ProjectNativeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   :hover {
     background-color: lightcoral;
     cursor: pointer;
     transition: 0.5s;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
   }
 `;
 

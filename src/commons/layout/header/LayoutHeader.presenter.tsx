@@ -14,7 +14,8 @@ import { useState } from "react";
 export default function LayoutHeaderUI(props: any) {
   return (
     <Header>
-      <BrandLogo onClick={props.onClickLogo} src="/images/logo01.jpg" />
+      {/* <BrandLogo onClick={props.onClickLogo} src="/images/logo01.jpg" /> */}
+      <BrandLogo> MOCAR </BrandLogo>
       {!props.userLoggedIn ? (
         <UserWrapper>
           <Text onClick={props.onClickLogin}>로그인</Text>

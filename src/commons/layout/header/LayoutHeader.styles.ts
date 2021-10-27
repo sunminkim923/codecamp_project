@@ -11,10 +11,15 @@ export const Header = styled.div`
   padding-right: 40px;
 `;
 
-export const BrandLogo = styled.img`
-  width: 120px;
-  height: 120px;
-  cursor: pointer;
+// export const BrandLogo = styled.img`
+//   width: 120px;
+//   height: 120px;
+//   cursor: pointer;
+// `;
+
+export const BrandLogo = styled.div`
+  font-size: 36px;
+  font-weight: 700;
 `;
 
 export const UserWrapper = styled.div`
