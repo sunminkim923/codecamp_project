@@ -70,6 +70,12 @@ export default function LandingUI() {
     router.push("/market/list");
   };
 
+  const onClickNative = () => {
+    window.open(
+      "https://innovative-canid-3bc.notion.site/604bbc989d55418ba8c63ed21ec36312"
+    );
+  };
+
   return (
     <Wrapper>
       <Fade bottom>
@@ -241,7 +247,7 @@ export default function LandingUI() {
               </ProjectMarketWrapper>
             </Fade>
             <Fade bottom>
-              <ProjectNativeWrapper>
+              <ProjectNativeWrapper onClick={onClickNative}>
                 <MyProjectStackTitle> 산책가까? </MyProjectStackTitle>
                 <ProjectsImg src="/images/myprofile/test02.jpg" />
                 <MyProjectStackWrapper>
