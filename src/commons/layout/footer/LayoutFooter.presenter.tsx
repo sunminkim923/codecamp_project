@@ -16,10 +16,10 @@ export default function LayoutFooterUI() {
         <Title> MOCAR</Title>
         <ContentsWrapper>
           <Contents> 제작자 : 김선민</Contents>
-          <Contents> 연락처 : 010 - 4442 - 6120</Contents>
-          <Contents> 이메일 : tjsals0406 @ gmail.com</Contents>
+          <Contents> 연락처 : 010-4442-6120</Contents>
+          <Contents> 이메일 : tjsals0406@gmail.com</Contents>
           <Contents> 깃허브 : https://github.com/sunminkim923 </Contents>
-          <Version> 2.0.1 ver. </Version>
+          <Version> 2.0.2 ver. </Version>
         </ContentsWrapper>
         <Underline />
         <Copyright>Copyright © All Rights Reserved </Copyright>

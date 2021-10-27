@@ -3,10 +3,9 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   width: 100%;
   height: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #222222;
+  display: flex;
+  justify-content: center;
 `;
 
 export const SubWrapper = styled.div`
@@ -14,11 +13,12 @@ export const SubWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  text-align: center;
   padding-top: 40px;
   font-size: 36px;
   font-weight: 700;
   color: white;
+  text-align: center;
+  letter-spacing: 2px;
 `;
 
 export const Underline = styled.div`
@@ -35,11 +35,12 @@ export const Contents = styled.div`
   color: white;
   font-size: 16px;
   padding-top: 10px;
+  letter-spacing: 0.5px;
 `;
 export const Version = styled.div`
   color: white;
   font-size: 14px;
-  padding-top: 10px;
+  padding-top: 15px;
 `;
 
 export const Copyright = styled.div`
@@ -47,4 +48,5 @@ export const Copyright = styled.div`
   font-size: 16px;
   text-align: center;
   padding-top: 20px;
+  letter-spacing: 0.5px;
 `;
