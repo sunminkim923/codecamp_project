@@ -100,7 +100,9 @@ export const ChargeButton = styled.button`
   width: 100%;
   height: 35px;
   margin-top: 15px;
-  background-color: #ffd600;
+  background-color: #1450f9;
+  border-radius: 10px;
+  color: #ffffff;
   border: none;
   cursor: pointer;
 `;
@@ -156,7 +158,5 @@ export const ModalExitButton = styled.button`
   cursor: pointer;
   border: none;
   margin-top: 35px;
-  :hover {
-    background-color: #ffd600;
-  }
+  
 `;

@@ -15,7 +15,7 @@ const RESORE_ACCESSTOKEN = gql`
 export const getAccessToken = async (setAccessToken) => {
   try {
     const graphQLClient = new GraphQLClient(
-      "https://backend02.codebootcamp.co.kr/graphql",
+      "https://backend02.codebootcamp.co.kr/graphql05",
       { credentials: "include" }
     );
     const result = await graphQLClient.request(RESORE_ACCESSTOKEN);

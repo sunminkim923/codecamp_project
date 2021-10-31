@@ -34,7 +34,8 @@ const PaymentButton = styled.button`
   font-weight: 500;
   cursor: pointer;
   border: none;
-  background-color: #ffd600;
+  color: #ffffff;
+  background-color: #1450f9;
 `;
 
 declare const window: typeof globalThis & {

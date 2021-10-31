@@ -17,8 +17,9 @@ export default function LayoutBannerUI() {
   return (
     <Header>
       <Slider {...settings}>
-        <ImgItem src="/images/BannerImgTest.jpeg" />
-        <ImgItem src="/images/BannerImgTest.jpeg" />
+        <ImgItem src="/images/IMG_Banner01.png" />
+        <ImgItem src="/images/IMG_Banner02.png" />
+        <ImgItem src="/images/IMG_Banner03.png" />
       </Slider>
     </Header>
   );

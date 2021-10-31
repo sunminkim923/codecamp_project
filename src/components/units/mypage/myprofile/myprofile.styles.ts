@@ -48,7 +48,8 @@ export const ChangeButton = styled.button`
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
-  background-color: ${(props) => (props.isActive ? "#ffd600" : "")};
+  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
+  color: ${(props) => (props.isActive ? "#ffffff" : "")} ;
 `;
 
 export const InputBox = styled.div``;
