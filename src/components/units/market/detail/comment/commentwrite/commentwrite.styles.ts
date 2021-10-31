@@ -57,10 +57,14 @@ export const TextLength = styled.div`
 
 export const RegisterButton = styled.button`
   width: 91px;
-  height: 52px;
-  background-color: black;
+  height: 99%;
   border: none;
-  color: white;
+  cursor: pointer;
+  :hover {
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
+  }
 `;
 
 export const CommnetImg = styled.img``;

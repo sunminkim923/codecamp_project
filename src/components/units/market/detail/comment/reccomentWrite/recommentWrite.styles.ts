@@ -48,8 +48,9 @@ export const SubmitButton = styled.button`
   border: none;
   cursor: pointer;
   :hover {
-    background-color: #ffd600;
-    transition: 0.25s;
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
   }
 `;
 export const ExitWrapper = styled.div`

@@ -6,6 +6,7 @@ export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
 `;
 
 export const Wrapper = styled.div`
@@ -148,7 +149,8 @@ export const ListButton = styled.button`
   border: 1px solid #bdbdbd;
   cursor: pointer;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
     transition: 0.5s;
   }
 `;
@@ -159,7 +161,8 @@ export const EditButton = styled.button`
   border: 1px solid #bdbdbd;
   cursor: pointer;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
     transition: 0.5s;
   }
 `;
@@ -170,7 +173,8 @@ export const DeleteButton = styled.button`
   border: 1px solid #bdbdbd;
   cursor: pointer;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
     transition: 0.5s;
   }
 `;

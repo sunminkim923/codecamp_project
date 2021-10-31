@@ -51,7 +51,8 @@ export const LoginButton = styled.button`
   height: 64px;
   border-radius: 15px;
   border: 0.5px solid lightgray;
-  background-color: ${(props) => (props.isActive ? "#ffd600" : "")};
+  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
+  color: ${(props) => (props.isActive ? "#ffffff" : "")};
   font-size: 18px;
 `;
 

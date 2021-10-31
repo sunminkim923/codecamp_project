@@ -7,8 +7,8 @@ export const PageWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 100px;
 `;
 
 export const Wrapper = styled.div`
@@ -97,7 +97,6 @@ export const ZipCode = styled.input`
   border: 1px solid #bdbdbd;
   text-align: center;
   font-size: 16px;
-
   color: ${(props) => (props.address ? "" : "#bdbdbd")};
 `;
 export const SearchAddress = styled.button`
@@ -175,7 +174,10 @@ export const SubmitButton = styled.button`
   height: 52px;
   border: none;
   cursor: pointer;
-  background-color: ${(props) => (props.isActive ? "#ffd600" : "")};
+  font-size: 16px;
+  font-weight: 600;
+  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
+  color: ${(props) => (props.isActive ? "#ffffff" : "")};
 `;
 
 export const Error = styled.div`

@@ -149,8 +149,12 @@ export const ListButton = styled.button`
   border: none;
   background-color: #bdbdbd;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
   }
 `;
 
@@ -160,8 +164,12 @@ export const EditButton = styled.button`
   border: none;
   background-color: #bdbdbd;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
   }
 `;
 
@@ -171,8 +179,12 @@ export const DeleteButton = styled.button`
   border: none;
   background-color: #bdbdbd;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
   }
 `;
 
@@ -182,8 +194,12 @@ export const BuyButton = styled.button`
   border: none;
   background-color: #bdbdbd;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
   }
 `;
 

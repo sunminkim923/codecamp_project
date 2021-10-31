@@ -132,7 +132,10 @@ export const SubmitButton = styled.button`
   border: none;
   background-color: #bdbdbd;
   margin-top: 80px;
-  background-color: ${(props) => (props.isActive ? "#ffd600" : "")};
+  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
+  color: ${(props) => (props.isActive ? "#ffffff" : "")};
+  font-size: 16px;
+  font-weight: 500;
 `;
 
 export const EditButton = styled.button`
@@ -141,7 +144,10 @@ export const EditButton = styled.button`
   border: none;
   background-color: #bdbdbd;
   margin-top: 80px;
-  background-color: #ffd600;
+  background-color: #1450f9;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
   cursor: pointer;
 `;
 
@@ -173,5 +179,6 @@ export const AddressSearchButton = styled.button`
   height: 30px;
   width: 90px;
   font-size: 14px;
-  background-color: #ffd600;
+  background-color: #1450f9;
+  color: #ffffff;
 `;

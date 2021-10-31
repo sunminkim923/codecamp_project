@@ -113,12 +113,13 @@ export const TextLength = styled.div`
 
 export const SubmitButton = styled.button`
   width: 91px;
-  height: 100%;
-  background-color: #bdbdbd;
-  border: 1px solid #bdbdbd;
+  height: 99%;
+  border: none;
+  cursor: pointer;
   :hover {
-    background-color: #ffd600;
-    transition: 0.25s;
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
   }
 `;
 

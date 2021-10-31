@@ -37,7 +37,6 @@ export const BestProduct = styled.div`
   flex-direction: column;
   align-items: center;
   :hover {
-    background-color: #ffd600;
     transition: 0.5s;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.4);
   }
@@ -128,7 +127,7 @@ export const Text01 = styled.div`
   font-size: 18px;
   font-weight: 500;
   padding-right: 20px;
-  color: ${(props) => (props.soldItem ? "" : "#ffd600")};
+  color: ${(props) => (props.soldItem ? "" : "#1450f9")};
   cursor: pointer;
 `;
 
@@ -136,7 +135,7 @@ export const Text02 = styled.div`
   font-size: 18px;
   font-weight: 500;
   padding-right: 20px;
-  color: ${(props) => (props.soldItem ? "#ffd600" : "")};
+  color: ${(props) => (props.soldItem ? "#1450f9" : "")};
   cursor: pointer;
 `;
 
@@ -244,17 +243,20 @@ export const SubmitButtonWrapper = styled.div`
 `;
 
 export const SubmitButton = styled.button`
-  width: 124px;
+  width: 171px;
   height: 52px;
   background-color: white;
   font-size: 16px;
   font-weight: 500;
-  border-radius: 7px;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
   :hover {
-    background-color: #ffd600;
+    background-color: #1450f9;
+    color: #ffffff;
     transition: 0.5s;
   }
-  cursor: pointer;
 `;
 
 export const StickyWrapper = styled.div`

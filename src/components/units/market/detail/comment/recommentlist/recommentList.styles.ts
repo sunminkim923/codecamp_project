@@ -112,15 +112,15 @@ export const EditText = styled.div`
 `;
 
 export const EidtSubmitButton = styled.button`
-  width: 91px;
+ width: 91px;
   height: 99%;
   border: none;
-  background-color: #bdbdbd;
-  border-bottom: 1px solid #bdbdbd;
   cursor: pointer;
   :hover {
-    background-color: #ffd600;
-    transition: 0.25s;
+    background-color: #1450f9;
+    color: #ffffff;
+    transition: 0.5s;
+  }
   }
 `;
 

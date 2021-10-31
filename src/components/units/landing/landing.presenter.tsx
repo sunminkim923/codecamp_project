@@ -42,6 +42,11 @@ import {
   MyProjectStackTitle,
   MyProjectStackTextWrapper,
   MyProjectStackText,
+  ProgileExplanationTitle,
+  StackUnderLine,
+  FrameworkTitle,
+  MyStacksTitle,
+  ProjectContentsWrapper,
 } from "./landing.styles";
 import { useRouter } from "next/router";
 
@@ -88,18 +93,24 @@ export default function LandingUI() {
             <ProfileExplanationWrapper>
               <Fade bottom>
                 <ProfileExplanationTextWrapper>
-                  <ProfileExplanationText>
+                  <ProgileExplanationTitle>
                     안녕하세요. 고객경험을 넘어서 현재는 개발을 사랑하는
                     프론트엔드 개발자 김선민입니다.
-                  </ProfileExplanationText>
+                  </ProgileExplanationTitle>
                   <ProfileExplanationText>
+                    고객경험을 바탕으로 클라이언트 입장에서 서비스를 구현해보고
+                    싶어서 개발을 시작하게 되었습니다.단순히 코드를 작성하는
+                    개발자가 아니라, 문제를 지혜롭게 해결해 나가는 개발자로
+                    성장하길 희망합니다.
+                  </ProfileExplanationText>
+                  {/* <ProfileExplanationText>
                     고객경험을 바탕으로 클라이언트 입장에서 서비스를 구현해보고
                     싶어서 개발을 시작하게 되었습니다.
                   </ProfileExplanationText>
                   <ProfileExplanationText>
                     단순히 코드를 작성하는 개발자가 아니라, 문제를 지혜롭게
                     해결해 나가는 개발자로 성장하길 희망합니다.
-                  </ProfileExplanationText>
+                  </ProfileExplanationText> */}
                 </ProfileExplanationTextWrapper>
               </Fade>
             </ProfileExplanationWrapper>
@@ -109,7 +120,7 @@ export default function LandingUI() {
       <Fade bottom>
         <Section02>
           <Fade bottom>
-            <Title>My Stacks</Title>
+            <MyStacksTitle>MY STACKS</MyStacksTitle>
           </Fade>
           <ProjectExplanationWrapper>
             {/* <ProjectExplanationTextWrapper>
@@ -129,6 +140,7 @@ export default function LandingUI() {
               <ProjectStackWrapper>
                 <ProjectLanguage>
                   <StackTitle> Language </StackTitle>
+                  <StackUnderLine />
                   <Fade bottom>
                     <StackText>Javascript</StackText>
                     <StackText>HTML</StackText>
@@ -137,8 +149,9 @@ export default function LandingUI() {
                 </ProjectLanguage>
                 <ProjectFramework>
                   <StackTitleWrapper>
-                    <StackTitle>Framework & Library</StackTitle>
+                    <FrameworkTitle>Framework & Library</FrameworkTitle>
                   </StackTitleWrapper>
+                  <StackUnderLine />
                   <Fade bottom>
                     <StackText>Next.js</StackText>
                     <StackText>React & React-hooks</StackText>
@@ -150,6 +163,7 @@ export default function LandingUI() {
                 </ProjectFramework>
                 <ProjectNetwork>
                   <StackTitle> Network </StackTitle>
+                  <StackUnderLine />
                   <Fade bottom>
                     <StackText>GraphQL & Apollo</StackText>
                     <StackText>Rest API & axios</StackText>
@@ -158,6 +172,7 @@ export default function LandingUI() {
                 </ProjectNetwork>
                 <ProjectGeneral>
                   <StackTitle> Cooperation </StackTitle>
+                  <StackUnderLine />
                   <Fade bottom>
                     <StackText>Git & Github</StackText>
                     <StackText>Notion</StackText>
@@ -212,57 +227,79 @@ export default function LandingUI() {
           <Title>MY PROJECTS</Title>
           <ProjectsWrapper>
             <Fade bottom>
-              <ProjectBoardWrapper onClick={onClickBoard}>
+              <ProjectContentsWrapper>
                 <MyProjectStackTitle> 자유게시판 </MyProjectStackTitle>
-                <ProjectsImg src="/images/myprofile/test01.jpg" />
-                <MyProjectStackWrapper>
-                  {/* <MyProjectStackTitle> 자유게시판 </MyProjectStackTitle> */}
-                  <MyProjectStackTextWrapper>
-                    <Fade bottom>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                    </Fade>
-                  </MyProjectStackTextWrapper>
-                </MyProjectStackWrapper>
-              </ProjectBoardWrapper>
+                <ProjectBoardWrapper onClick={onClickBoard}>
+                  <ProjectsImg src="/images/myprofile/test01.jpg" />
+                  <MyProjectStackWrapper>
+                    {/* <MyProjectStackTitle> 자유게시판 </MyProjectStackTitle> */}
+                    <MyProjectStackTextWrapper>
+                      <Fade bottom>
+                        <MyProjectStackText> - Next.js </MyProjectStackText>
+                        <MyProjectStackText>
+                          - React & React-hooks
+                        </MyProjectStackText>
+                        <MyProjectStackText> - TypeSctipt</MyProjectStackText>
+                        <MyProjectStackText>- GraphQL </MyProjectStackText>
+                        <MyProjectStackText>
+                          - Styled-Component
+                        </MyProjectStackText>
+                        <MyProjectStackText> - Emotion</MyProjectStackText>
+                      </Fade>
+                    </MyProjectStackTextWrapper>
+                  </MyProjectStackWrapper>
+                </ProjectBoardWrapper>
+              </ProjectContentsWrapper>
             </Fade>
             <Fade bottom>
-              <ProjectMarketWrapper onClick={onClickMarket}>
+              <ProjectContentsWrapper>
                 <MyProjectStackTitle> 중고마켓 </MyProjectStackTitle>
-                <ProjectsImg src="/images/myprofile/test02.jpg" />
-                <MyProjectStackWrapper>
-                  {/* <MyProjectStackTitle> 중고마켓 </MyProjectStackTitle> */}
-                  <MyProjectStackTextWrapper>
-                    <Fade bottom>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                    </Fade>
-                  </MyProjectStackTextWrapper>
-                </MyProjectStackWrapper>
-              </ProjectMarketWrapper>
+                <ProjectMarketWrapper onClick={onClickMarket}>
+                  <ProjectsImg src="/images/myprofile/test02.jpg" />
+                  <MyProjectStackWrapper>
+                    {/* <MyProjectStackTitle> 중고마켓 </MyProjectStackTitle> */}
+                    <MyProjectStackTextWrapper>
+                      <Fade bottom>
+                        <MyProjectStackText> - Next.js </MyProjectStackText>
+                        <MyProjectStackText>
+                          - React & React-hooks
+                        </MyProjectStackText>
+                        <MyProjectStackText> - TypeSctipt</MyProjectStackText>
+                        <MyProjectStackText>- GraphQL </MyProjectStackText>
+                        <MyProjectStackText>
+                          - Styled-Component
+                        </MyProjectStackText>
+                        <MyProjectStackText> - Emotion</MyProjectStackText>
+                      </Fade>
+                    </MyProjectStackTextWrapper>
+                  </MyProjectStackWrapper>
+                </ProjectMarketWrapper>
+              </ProjectContentsWrapper>
             </Fade>
             <Fade bottom>
-              <ProjectNativeWrapper onClick={onClickNative}>
+              <ProjectContentsWrapper>
                 <MyProjectStackTitle> 산책가까? </MyProjectStackTitle>
-                <ProjectsImg src="/images/myprofile/test02.jpg" />
-                <MyProjectStackWrapper>
-                  {/* <MyProjectStackTitle> 산책가까? </MyProjectStackTitle> */}
-                  <MyProjectStackTextWrapper>
-                    <Fade bottom>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                      <MyProjectStackText> - Next.js </MyProjectStackText>
-                    </Fade>
-                  </MyProjectStackTextWrapper>
-                </MyProjectStackWrapper>
-              </ProjectNativeWrapper>
+                <ProjectNativeWrapper onClick={onClickNative}>
+                  <ProjectsImg src="/images/myprofile/test02.jpg" />
+                  <MyProjectStackWrapper>
+                    {/* <MyProjectStackTitle> 산책가까? </MyProjectStackTitle> */}
+                    <MyProjectStackTextWrapper>
+                      <Fade bottom>
+                        <MyProjectStackText>- React-Native</MyProjectStackText>
+                        <MyProjectStackText>
+                          - React & React-hooks
+                        </MyProjectStackText>
+                        <MyProjectStackText> - TypeScript </MyProjectStackText>
+                        <MyProjectStackText> - GraphQL</MyProjectStackText>
+                        <MyProjectStackText> - Firebase </MyProjectStackText>
+                        <MyProjectStackText>
+                          - Firestore-Database
+                        </MyProjectStackText>
+                      </Fade>
+                    </MyProjectStackTextWrapper>
+                  </MyProjectStackWrapper>
+                </ProjectNativeWrapper>
+              </ProjectContentsWrapper>
             </Fade>
           </ProjectsWrapper>
         </Section04>
