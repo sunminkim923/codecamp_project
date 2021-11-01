@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FaUserCircle, FaRegThumbsUp } from "react-icons/fa";
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -252,4 +253,13 @@ export const Keyword = styled.span`
   color: ${(props: { isMatched: boolean }) => (props.isMatched ? "red" : "")};
   font-weight: ${(props: { isMatched: boolean }) =>
     props.isMatched ? "bolder" : ""};
+`;
+
+export const ProfileIcon = styled(FaUserCircle)`
+  font-size: 18px;
+`;
+
+export const LikeBoardIcon = styled(FaRegThumbsUp)`
+  text-align: center;
+  color: #1450f9;
 `;

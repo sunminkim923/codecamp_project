@@ -39,7 +39,10 @@ import {
   SubmitButton,
   PagenationWrapper,
   Keyword,
+  ProfileIcon,
+  LikeBoardIcon,
 } from "./boardList.styles";
+import { FaUserCircle } from "react-icons/fa";
 
 //@ts-ignore
 export default function BoardListUI(props) {
@@ -69,13 +72,13 @@ export default function BoardListUI(props) {
                 <BottomWrapper>
                   <WriterWrapper>
                     <Writer>
-                      <ProfileImg src="/images/profile.svg" />
+                      <ProfileIcon />
                       <WriterName>{data.writer}</WriterName>
                     </Writer>
                     <WriteDate>{getDate(data.createdAt)}</WriteDate>
                   </WriterWrapper>
                   <LikeBoardWrapper>
-                    <LikeBoardImg src="/images/thumb_up.svg/" />
+                    <LikeBoardIcon />
                     <LikeBoardPoint>{data.likeCount}</LikeBoardPoint>
                   </LikeBoardWrapper>
                 </BottomWrapper>

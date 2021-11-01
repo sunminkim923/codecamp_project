@@ -22,19 +22,20 @@ import {
   Contents,
   YoutubeWrapper,
   YoutubeBox,
-  LikeCountWrapper,
-  LikeWrapper,
-  DisLikeWrapper,
-  LikeButton,
-  LikeCount,
-  DisLikeButton,
-  DisLikeCount,
   ButtonWrapper,
   ListButton,
   EditButton,
   DeleteButton,
   UnderLine02,
+  RecommendWrapper,
+  LikeWrapper,
+  DisLikeWrapper,
+  LikeBoardIcon,
+  LikeBoardCount,
+  DisLikeBoardIcon,
+  DisLikeBoardCount,
 } from "./boardDetail.styles";
+import { FaUserCircle } from "react-icons/fa";
 
 export default function BoardDetailUI(props) {
   return (
@@ -43,7 +44,10 @@ export default function BoardDetailUI(props) {
         <Wrapper>
           <HeadWrapper>
             <ProfileWrapper>
-              <ProfileImg src="/images/board_detail_profile.png/" />
+              <ProfileImg>
+                <FaUserCircle />
+              </ProfileImg>
+
               <WriterWrapper>
                 <Writer> {props.data?.fetchBoard.writer} </Writer>
                 <Date> Date: {getDate(props.data?.fetchBoard.createdAt)} </Date>
@@ -79,22 +83,32 @@ export default function BoardDetailUI(props) {
               }
             />
           </YoutubeWrapper>
-          <LikeCountWrapper>
+
+          <RecommendWrapper>
             <LikeWrapper>
-              <LikeButton
-                src="/images/likeButton.png/"
-                onClick={props.onClickLike}
-              />
-              <LikeCount> {props.data?.fetchBoard.likeCount} </LikeCount>
+              <LikeBoardIcon onClick={props.onClickLike} />
+              <LikeBoardCount>
+                {props.data?.fetchBoard.likeCount}
+              </LikeBoardCount>
             </LikeWrapper>
             <DisLikeWrapper>
-              <DisLikeButton
-                src="/images/disLikeButton.png/"
-                onClick={props.onClickDislike}
-              />
+              <DisLikeBoardIcon onClick={props.onClickDislike} />
+              <DisLikeBoardCount>
+                {props.data?.fetchBoard.dislikeCount}
+              </DisLikeBoardCount>
+            </DisLikeWrapper>
+          </RecommendWrapper>
+          {/* <LikeCountWrapper>
+            <LikeWrapper>
+              <LikeBoardIcon onClick={props.onClickLike} />
+              <LikeCount> {props.data?.fetchBoard.likeCount} </LikeCount>
+            </LikeWrapper>
+            <LikeBoardIcon onClick={props.onClickLike} />
+            <DisLikeWrapper>
+              <DisLikeIcon onClick={props.onClickDislike} />
               <DisLikeCount>{props.data?.fetchBoard.dislikeCount}</DisLikeCount>
             </DisLikeWrapper>
-          </LikeCountWrapper>
+          </LikeCountWrapper> */}
         </Wrapper>
         <ButtonWrapper>
           <ListButton onClick={props.onClickList}>목록으로 </ListButton>

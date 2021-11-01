@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import ReactPlayer from "react-player";
+import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa";
 
 export const PageWrapper = styled.div`
   padding-top: 80px;
@@ -28,9 +29,14 @@ export const ProfileWrapper = styled.div`
   align-items: center;
 `;
 
-export const ProfileImg = styled.img`
+export const ProfileImg = styled.div`
   width: 54px;
   height: 54px;
+  font-size: 48px;
+  text-align: center;
+  display: flex;
+
+  justify-content: center;
 `;
 
 export const WriterWrapper = styled.div`
@@ -99,52 +105,6 @@ export const LikeCountWrapper = styled.div`
   justify-content: center;
 `;
 
-export const LikeWrapper = styled.div`
-  padding-right: 30px;
-  width: 40px;
-  height: 51px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const LikeButton = styled.img`
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-`;
-
-export const LikeCount = styled.div`
-  font-size: 18px;
-  font-weight: 400;
-  color: #ffd600;
-  padding-top: 10px;
-`;
-
-export const DisLikeWrapper = styled.div`
-  padding-left: 30px;
-  width: 40px;
-  height: 51px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const DisLikeButton = styled.img`
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-`;
-
-export const DisLikeCount = styled.div`
-  font-size: 18px;
-  font-weight: 400;
-  color: #828282;
-  padding-top: 10px;
-`;
-
 export const ButtonWrapper = styled.div`
   width: 585px;
   padding-top: 80px;
@@ -193,4 +153,58 @@ export const UnderLine02 = styled.div`
   width: 1199px;
   height: 1px;
   border-top: 1px solid #bdbdbd;
+`;
+
+export const RecommendWrapper = styled.div`
+  margin-top: 80px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const LikeWrapper = styled.div`
+  width: 60px;
+  height: 80px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const DisLikeWrapper = styled.div`
+  width: 60px;
+  height: 80px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const LikeBoardIcon = styled(FaRegThumbsUp)`
+  font-size: 36px;
+  cursor: pointer;
+  :hover {
+    color: #1450f9;
+  }
+`;
+
+export const LikeBoardCount = styled.div`
+  font-size: 22px;
+  font-weight: 600;
+`;
+
+export const DisLikeBoardIcon = styled(FaRegThumbsDown)`
+  font-size: 36px;
+  cursor: pointer;
+  :hover {
+    color: red;
+  }
+`;
+
+export const DisLikeBoardCount = styled.div`
+  font-size: 22px;
+  font-weight: 600;
 `;
