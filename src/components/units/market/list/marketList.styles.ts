@@ -212,7 +212,6 @@ export const ProductTag = styled.div`
 export const ProfileWrapper = styled.div`
   padding-top: 26px;
   display: flex;
-  justify-content: center;
   align-items: center;
 `;
 
