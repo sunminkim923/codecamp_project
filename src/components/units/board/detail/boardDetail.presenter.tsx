@@ -83,7 +83,6 @@ export default function BoardDetailUI(props) {
               }
             />
           </YoutubeWrapper>
-
           <RecommendWrapper>
             <LikeWrapper>
               <LikeBoardIcon onClick={props.onClickLike} />
@@ -98,17 +97,6 @@ export default function BoardDetailUI(props) {
               </DisLikeBoardCount>
             </DisLikeWrapper>
           </RecommendWrapper>
-          {/* <LikeCountWrapper>
-            <LikeWrapper>
-              <LikeBoardIcon onClick={props.onClickLike} />
-              <LikeCount> {props.data?.fetchBoard.likeCount} </LikeCount>
-            </LikeWrapper>
-            <LikeBoardIcon onClick={props.onClickLike} />
-            <DisLikeWrapper>
-              <DisLikeIcon onClick={props.onClickDislike} />
-              <DisLikeCount>{props.data?.fetchBoard.dislikeCount}</DisLikeCount>
-            </DisLikeWrapper>
-          </LikeCountWrapper> */}
         </Wrapper>
         <ButtonWrapper>
           <ListButton onClick={props.onClickList}>목록으로 </ListButton>
