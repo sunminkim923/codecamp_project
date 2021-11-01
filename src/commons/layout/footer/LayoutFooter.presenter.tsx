@@ -19,7 +19,7 @@ export default function LayoutFooterUI() {
           <Contents> 연락처 : 010-4442-6120</Contents>
           <Contents> 이메일 : tjsals0406@gmail.com</Contents>
           <Contents> 깃허브 : https://github.com/sunminkim923 </Contents>
-          <Version> 2.3.0 ver. </Version>
+          <Version> 2.3.1 ver. </Version>
         </ContentsWrapper>
         <Underline />
         <Copyright>Copyright © All Rights Reserved </Copyright>
