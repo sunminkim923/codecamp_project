@@ -9,7 +9,7 @@ import {
   RegisterWrapper,
   TextLength,
   RegisterButton,
-  CommnetImg,
+  CommnetIcon,
 } from "./commentwrite.styles";
 
 export default function CommentWriteUI(props: any) {
@@ -18,7 +18,7 @@ export default function CommentWriteUI(props: any) {
       <Wrapper>
         <UnderLine />
         <HeadWrapper>
-          <CommnetImg src="/images/comment.svg/" />
+          <CommnetIcon />
           <Text>문의하기</Text>
         </HeadWrapper>
         <ContentsWrapper>

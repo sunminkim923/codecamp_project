@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
-
+import { FaTimes } from "react-icons/fa";
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -87,6 +87,6 @@ export const TopWrapper = styled.div`
   align-items: center;
 `;
 
-export const ExitButton = styled.img`
+export const ExitIcon = styled(FaTimes)`
   cursor: pointer;
 `;

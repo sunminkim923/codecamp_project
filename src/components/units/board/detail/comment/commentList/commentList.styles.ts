@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
+import { FaUserCircle, FaPencilAlt, FaTrash, FaTimes } from "react-icons/fa";
 
 export const PageWrapper = styled.div``;
 
@@ -45,15 +46,6 @@ export const StarPoint = styled(Rate)``;
 
 export const ButtonWrapper = styled.div``;
 
-export const EditButton = styled.img`
-  cursor: pointer;
-`;
-
-export const DeleteButton = styled.img`
-  cursor: pointer;
-  margin-left: 16px;
-`;
-
 export const Contents = styled.div`
   padding-top: 6px;
   font-size: 16px;
@@ -78,4 +70,18 @@ export const UnderLine = styled.div`
 export const ModalInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const ProfileIcon = styled(FaUserCircle)`
+  font-size: 40px;
+  text-align: center;
+`;
+
+export const EditIcon = styled(FaPencilAlt)`
+  cursor: pointer;
+`;
+
+export const DeleteIcon = styled(FaTrash)`
+  cursor: pointer;
+  margin-left: 16px;
 `;

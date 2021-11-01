@@ -9,7 +9,8 @@ import {
   TextLength,
   SubmitButton,
   ExitWrapper,
-  ExitButton,
+  ExitIcon,
+  ArrowIcon,
 } from "./recommentWrite.styles";
 
 export default function RecommnetWriteUI(props) {
@@ -17,14 +18,11 @@ export default function RecommnetWriteUI(props) {
     <>
       <ExitWrapper>
         <Tooltip placement="top" title="취소">
-          <ExitButton
-            src="/images/commentDelete.svg"
-            onClick={props.onClickExit}
-          />
+          <ExitIcon onClick={props.onClickExit} />
         </Tooltip>
       </ExitWrapper>
       <Wrapper>
-        <Arrow src="/images/arrow_comment.png" />
+        <ArrowIcon />
         <InputWrapper>
           <RecommentInput
             placeholder="답글을 입력해주세요"

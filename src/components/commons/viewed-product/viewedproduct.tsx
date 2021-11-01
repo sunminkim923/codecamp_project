@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import { FaHeart, FaUserCircle } from "react-icons/fa";
 const Wrapper = styled.div`
   width: 196px;
   height: 100%;
@@ -27,6 +27,7 @@ const ProductWrapper = styled.div`
 const HeartPointWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 `;
 
 const Heart = styled.img``;
@@ -72,6 +73,10 @@ const Tags = styled.div`
   color: #bdbdbd;
 `;
 
+const HeartIcon = styled(FaHeart)`
+  color: #1450f9;
+`;
+
 export default function ViewedProduct(props: any) {
   return (
     <>
@@ -80,7 +85,7 @@ export default function ViewedProduct(props: any) {
         {props?.baskets?.map((data: any) => (
           <ProductWrapper key={data?._id} onClick={props.onClickProduct}>
             <HeartPointWrapper>
-              <Heart src="/images/heart-smaller.svg" />
+              <HeartIcon />
               <HeartPoint>{data?.pickedCount}</HeartPoint>
             </HeartPointWrapper>
             <BodyWrapper>
@@ -88,7 +93,7 @@ export default function ViewedProduct(props: any) {
                 src={
                   data.images[0]
                     ? `https://storage.googleapis.com/${data.images[0]}`
-                    : " "
+                    : "/images/mainIMG.jpg"
                 }
               />
             </BodyWrapper>

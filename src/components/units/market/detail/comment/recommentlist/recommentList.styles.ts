@@ -1,4 +1,15 @@
 import styled from "@emotion/styled";
+import {
+  FaUserCircle,
+  FaPencilAlt,
+  FaTrash,
+  FaTimes,
+  FaCommentAlt,
+  FaHeart,
+  FaCommentDots,
+  FaReply,
+  FaLevelUpAlt,
+} from "react-icons/fa";
 
 export const Wrapper = styled.div``;
 
@@ -8,11 +19,6 @@ export const CommentWrapper = styled.div`
   display: flex;
   align-items: center;
   padding-top: 30px;
-`;
-
-export const ArrowImg = styled.img`
-  width: 15px;
-  height: 17px;
 `;
 
 export const BodyWrapper = styled.div`
@@ -47,7 +53,7 @@ export const Contents = styled.div`
 `;
 
 export const CreatedAt = styled.div`
-  padding-left: 160px;
+  padding-left: 170px;
   color: #bdbdbd;
 `;
 
@@ -75,8 +81,8 @@ export const EditWrapper = styled.div`
 
 export const EditCommentWrapper = styled.div`
   padding-left: 64px;
-
   display: flex;
+  align-items: center;
 `;
 
 export const EditCommentInputWrapper = styled.div`
@@ -112,7 +118,7 @@ export const EditText = styled.div`
 `;
 
 export const EidtSubmitButton = styled.button`
- width: 91px;
+  width: 91px;
   height: 99%;
   border: none;
   cursor: pointer;
@@ -120,7 +126,6 @@ export const EidtSubmitButton = styled.button`
     background-color: #1450f9;
     color: #ffffff;
     transition: 0.5s;
-  }
   }
 `;
 
@@ -139,3 +144,23 @@ export const EidtTooltopWrapper = styled.div``;
 export const DeleteTooltipWrapper = styled.div`
   padding-left: 20px;
 `;
+
+export const ProfielIcon = styled(FaUserCircle)`
+  font-size: 42px;
+  margin-left: 30px;
+`;
+
+export const ArrowIcon = styled(FaLevelUpAlt)`
+  transform: rotate(90deg);
+  font-size: 20px;
+`;
+
+export const EditIcon = styled(FaPencilAlt)`
+  cursor: pointer;
+`;
+
+export const DeleteIcon = styled(FaTrash)`
+  cursor: pointer;
+`;
+
+export const ExitIcon = styled(FaTimes)``;

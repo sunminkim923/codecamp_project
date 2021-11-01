@@ -1,15 +1,10 @@
 import styled from "@emotion/styled";
+import { FaTimes, FaLevelUpAlt } from "react-icons/fa";
 
 export const Wrapper = styled.div`
   padding-top: 20px;
   padding-left: 65px;
   display: flex;
-`;
-
-export const Arrow = styled.img`
-  margin-top: 20px;
-  width: 15px;
-  height: 17px;
 `;
 
 export const InputWrapper = styled.div`
@@ -58,6 +53,12 @@ export const ExitWrapper = styled.div`
   justify-content: flex-end;
 `;
 
-export const ExitButton = styled.img`
+export const ExitIcon = styled(FaTimes)`
   cursor: pointer;
+`;
+
+export const ArrowIcon = styled(FaLevelUpAlt)`
+  transform: rotate(90deg);
+  margin-top: 30px;
+  font-size: 20px;
 `;

@@ -1,5 +1,6 @@
 //@ts-nocheck
 import styled from "@emotion/styled";
+import { FaHeart, FaUserCircle } from "react-icons/fa";
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -171,8 +172,8 @@ export const SearchButton = styled.button`
 
 export const ProductWrapper = styled.div`
   border-top: 1px solid #bdbdbd;
-  margin-top: 40px;
-  padding-top: 28px;
+  margin-top: 26px;
+  padding-top: 40px;
   display: flex;
   padding-bottom: 28px;
   cursor: pointer;
@@ -210,6 +211,9 @@ export const ProductTag = styled.div`
 
 export const ProfileWrapper = styled.div`
   padding-top: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ProfileImg = styled.img`
@@ -273,4 +277,21 @@ export const Keyword = styled.span`
   color: ${(props: { isMatched: boolean }) => (props.isMatched ? "red" : "")};
   font-weight: ${(props: { isMatched: boolean }) =>
     props.isMatched ? "bolder" : ""};
+`;
+
+export const BestProductHeartIcon = styled(FaHeart)`
+  font-size: 20px;
+  color: #1450f9;
+`;
+
+export const ProductHeartIcon = styled(FaHeart)`
+  margin-right: 6px;
+  margin-left: 22px;
+  font-size: 18px;
+  color: #1450f9;
+`;
+
+export const ProfileIcon = styled(FaUserCircle)`
+  font-size: 18px;
+  margin-right: 6px;
 `;

@@ -6,10 +6,8 @@ import {
   PageWrapper,
   UserInfoWrapper,
   Title,
-  ProfileImg,
   UserName,
   PointWrapper,
-  PigIcon,
   Point,
   MyBasketWrapper,
   BasketIcon,
@@ -17,7 +15,6 @@ import {
   MyPointWrapper,
   MyPoint,
   MyProfileWrapper,
-  ProfileIcon,
   MyProfile,
   ChargeButton,
   ModalWrapper,
@@ -28,6 +25,10 @@ import {
   ModalChargeInfo,
   ModalChargeInfoTest,
   ModalExitButton,
+  ProfileIconMain,
+  MainProfileWrapper,
+  PointIcon,
+  ProfileIcon,
 } from "./mypage.styles";
 
 export default function SideMenuUI(props: any) {
@@ -36,10 +37,13 @@ export default function SideMenuUI(props: any) {
       <PageWrapper>
         <UserInfoWrapper>
           <Title>MYPAGE</Title>
-          <ProfileImg src="/images/profile.svg/" />
+          <MainProfileWrapper>
+            <ProfileIconMain />
+          </MainProfileWrapper>
+
           <UserName>{props.data?.fetchUserLoggedIn.name}</UserName>
           <PointWrapper>
-            <PigIcon src="/images/pig.png/" />
+            <PointIcon />
             <Point>{props.data?.fetchUserLoggedIn.userPoint.amount} P</Point>
           </PointWrapper>
           <ChargeButton onClick={props.onClickCharge}>충전하기</ChargeButton>
@@ -78,15 +82,15 @@ export default function SideMenuUI(props: any) {
             </Modal>
           )}
           <MyBasketWrapper>
-            <BasketIcon src="/images/basket.png/" />
+            <BasketIcon />
             <MyBasket>내 장터</MyBasket>
           </MyBasketWrapper>
           <MyPointWrapper>
-            <PigIcon src="/images/pig.png/" />
+            <PointIcon />
             <MyPoint>내 포인트</MyPoint>
           </MyPointWrapper>
           <MyProfileWrapper>
-            <ProfileIcon src="/images/profile.svg/" />
+            <ProfileIcon />
             <MyProfile>내 프로필</MyProfile>
           </MyProfileWrapper>
         </UserInfoWrapper>

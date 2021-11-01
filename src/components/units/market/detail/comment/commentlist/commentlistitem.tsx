@@ -28,6 +28,11 @@ import {
   CommentEditWrapper,
   RecommentWrapper,
   CommentDeleteWrapper,
+  ProfileIcon,
+  EditIcon,
+  RecommentIcon,
+  DeleteIcon,
+  ExitIcon,
 } from "./commentlist.styles";
 import { useMutation } from "@apollo/client";
 import {
@@ -124,7 +129,7 @@ export default function CommentListItem(props: any) {
         {!isEdit && (
           <div>
             <HeadWrapper>
-              <ProfileImg src="/images/profile.svg/" />
+              <ProfileIcon />
               <ContentsWrapper>
                 <TopWrapper>
                   <Writer>{props.data.user.name}</Writer>
@@ -132,31 +137,21 @@ export default function CommentListItem(props: any) {
                     {props.loggedInUser === props.data.user._id && (
                       <CommentEditWrapper>
                         <Tooltip placement="top" title="수정하기">
-                          <CommentEdit
-                            id={props.data._id}
-                            src="/images/commentEdit.svg/"
-                            onClick={onClickEdit}
-                          />
+                          <EditIcon id={props.data._id} onClick={onClickEdit} />
                         </Tooltip>
                       </CommentEditWrapper>
                     )}
 
                     <RecommentWrapper>
                       <Tooltip placement="top" title="답글달기">
-                        <ReComment
-                          src="/images/commentButton.svg/"
-                          onClick={onClickRecomment}
-                        />
+                        <RecommentIcon onClick={onClickRecomment} />
                       </Tooltip>
                     </RecommentWrapper>
 
                     {props.loggedInUser === props.data.user._id && (
                       <CommentDeleteWrapper>
                         <Tooltip placement="top" title="삭제하기">
-                          <CommentDelete
-                            src="/images/commentDelete.svg"
-                            onClick={onClickDelete}
-                          />
+                          <DeleteIcon onClick={onClickDelete} />
                         </Tooltip>
                       </CommentDeleteWrapper>
                     )}
@@ -182,10 +177,7 @@ export default function CommentListItem(props: any) {
           <EditWrapper>
             <ExitWrapper>
               <Tooltip placement="top" title="취소">
-                <ExitButton
-                  src="/images/commentDelete.svg/"
-                  onClick={onClickExit}
-                />
+                <ExitIcon onClick={onClickExit} />
               </Tooltip>
             </ExitWrapper>
             <InputWrapper>

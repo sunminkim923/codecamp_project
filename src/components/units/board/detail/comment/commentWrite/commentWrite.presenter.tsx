@@ -14,8 +14,8 @@ import {
   BottomWrapper,
   TextLength,
   SubmitButton,
-  ExitButton,
   TopWrapper,
+  ExitIcon,
 } from "./commentWrite.styles";
 
 export default function CommentWriteUI(props) {
@@ -68,10 +68,7 @@ export default function CommentWriteUI(props) {
             </WriterWrapper>
             {props.isEdit && (
               <Tooltip placement="top" title="취소">
-                <ExitButton
-                  src="/images/commentDelete.svg/"
-                  onClick={props.onClickExit}
-                />
+                <ExitIcon onClick={props.onClickExit} />
               </Tooltip>
             )}
           </TopWrapper>

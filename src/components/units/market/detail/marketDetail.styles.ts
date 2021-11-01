@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
+import { FaUserCircle, FaHeart } from "react-icons/fa";
 
 export const PageWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 20px;
 `;
 
@@ -23,6 +24,8 @@ export const HeadWrapper = styled.div`
 `;
 export const ProfileWrapper = styled.div`
   display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const Profile = styled.img`
@@ -216,4 +219,14 @@ export const SellerName = styled.div`
 export const SellerDate = styled.div`
   font-size: 12px;
   font-weight: 400;
+`;
+
+export const ProfileIcon = styled(FaUserCircle)`
+  font-size: 40px;
+  margin-right: 5px;
+`;
+
+export const HeartIcon = styled(FaHeart)`
+  font-size: 38px;
+  color: #1450f9;
 `;

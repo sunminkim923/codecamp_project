@@ -1,4 +1,11 @@
 import styled from "@emotion/styled";
+import {
+  FaUserCircle,
+  FaPencilAlt,
+  FaTrash,
+  FaTimes,
+  FaCommentAlt,
+} from "react-icons/fa";
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -142,3 +149,22 @@ export const RecommentWrapper = styled.div`
 export const CommentDeleteWrapper = styled.div`
   padding-left: 20px;
 `;
+
+export const ProfileIcon = styled(FaUserCircle)`
+  font-size: 42px;
+  text-align: center;
+`;
+
+export const EditIcon = styled(FaPencilAlt)`
+  cursor: pointer;
+`;
+
+export const RecommentIcon = styled(FaCommentAlt)`
+  cursor: pointer;
+`;
+
+export const DeleteIcon = styled(FaTrash)`
+  cursor: pointer;
+`;
+
+export const ExitIcon = styled(FaTimes)``;

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FaCommentDots } from "react-icons/fa";
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -19,6 +20,7 @@ export const UnderLine = styled.div`
 export const HeadWrapper = styled.div`
   padding-top: 45px;
   display: flex;
+  align-items: center;
 `;
 
 export const Text = styled.div`
@@ -67,4 +69,6 @@ export const RegisterButton = styled.button`
   }
 `;
 
-export const CommnetImg = styled.img``;
+export const CommnetIcon = styled(FaCommentDots)`
+  font-size: 22px;
+`;

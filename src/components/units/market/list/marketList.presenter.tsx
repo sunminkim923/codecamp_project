@@ -43,6 +43,9 @@ import {
   StickyWrapper,
   InfiniteScrollWrapper,
   Keyword,
+  BestProductHeartIcon,
+  ProductHeartIcon,
+  ProfileIcon,
 } from "./marketList.styles";
 
 export default function MarketListUI(props) {
@@ -60,7 +63,7 @@ export default function MarketListUI(props) {
                 src={
                   data.images[0]
                     ? `https://storage.googleapis.com/${data.images[0]}`
-                    : " "
+                    : "/images/mainIMG.jpg"
                 }
               />
               <BestProductInfoWrapper>
@@ -71,7 +74,7 @@ export default function MarketListUI(props) {
                     <BestProductPrice>{data.price} 원</BestProductPrice>
                   </BestProductCharacterWrapper>
                   <BestProductHeartPointWrapper>
-                    <BestProductHeart src="/images/heart-small.svg" />
+                    <BestProductHeartIcon />
                     <BestProductHeartPoint>
                       {data.pickedCount}
                     </BestProductHeartPoint>
@@ -122,7 +125,7 @@ export default function MarketListUI(props) {
                       src={
                         data.images[0]
                           ? `https://storage.googleapis.com/${data.images[0]}`
-                          : " "
+                          : "/images/mainIMG.jpg"
                       }
                     />
                     <ProductExplanationWrapper>
@@ -145,9 +148,9 @@ export default function MarketListUI(props) {
                         <ProductCharacter>{data.remarks}</ProductCharacter>
                         <ProductTag>{data.tags}</ProductTag>
                         <ProfileWrapper>
-                          <ProfileImg src="/images/profile-small.svg" />
+                          <ProfileIcon />
                           {data?.seller?.name}
-                          <HeartPoint src="/images/heart-small.svg" />
+                          <ProductHeartIcon />
                           {data.pickedCount}
                         </ProfileWrapper>
                       </ContentsWrapper>

@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { Modal, Tooltip } from "antd";
-import { useRouter } from "next/router";
+import { getDate } from "../../../../../../commons/libraries/utils";
 import { ChangeEvent, useState } from "react";
 import {
   DELETE_USEDITEM_QUESTION_ANSWER,
@@ -10,7 +10,6 @@ import {
 import {
   Wrapper,
   CommentWrapper,
-  ArrowImg,
   BodyWrapper,
   ProfileImg,
   ContentsWrapper,
@@ -32,6 +31,11 @@ import {
   EidtSubmitButton,
   EidtTooltopWrapper,
   DeleteTooltipWrapper,
+  ProfielIcon,
+  ArrowIcon,
+  EditIcon,
+  DeleteIcon,
+  ExitIcon,
 } from "./recommentList.styles";
 
 export default function ReCommentListItem(props: any) {
@@ -118,9 +122,9 @@ export default function ReCommentListItem(props: any) {
       {!isEdit && (
         <div>
           <CommentWrapper>
-            <ArrowImg src="/images/arrow_comment.png/" />
+            <ArrowIcon />
             <BodyWrapper>
-              <ProfileImg src="/images/profile.svg/" />
+              <ProfielIcon />
               <ContentsWrapper>
                 <WriterWrapper>
                   <WriterName>{props.data.user.name}</WriterName>
@@ -130,10 +134,7 @@ export default function ReCommentListItem(props: any) {
                   {props.loggedInuser === props.data.user._id && (
                     <EidtTooltopWrapper>
                       <Tooltip placement="top" title="수정하기">
-                        <EditButton
-                          src="/images/commentEdit.svg/"
-                          onClick={onClickEdit}
-                        />
+                        <EditIcon onClick={onClickEdit} />
                       </Tooltip>
                     </EidtTooltopWrapper>
                   )}
@@ -141,10 +142,7 @@ export default function ReCommentListItem(props: any) {
                   {props.loggedInuser === props.data.user._id && (
                     <DeleteTooltipWrapper>
                       <Tooltip placement="top" title="삭제하기">
-                        <DeleteButton
-                          src="/images/commentDelete.svg"
-                          onClick={onClickDelete}
-                        />
+                        <DeleteIcon onClick={onClickDelete} />
                       </Tooltip>
                     </DeleteTooltipWrapper>
                   )}
@@ -162,21 +160,18 @@ export default function ReCommentListItem(props: any) {
               </ContentsWrapper>
             </BodyWrapper>
           </CommentWrapper>
-          <CreatedAt>{props.data.createdAt}</CreatedAt>
+          <CreatedAt> {getDate(props.data.createdAt)}</CreatedAt>
         </div>
       )}
       {isEdit && (
         <EditWrapper>
           <ExitButtonWrapper>
             <Tooltip placement="top" title="취소">
-              <ExitButton
-                src="/images/commentDelete.svg/"
-                onClick={onClickExit}
-              />
+              <ExitIcon onClick={onClickExit} />
             </Tooltip>
           </ExitButtonWrapper>
           <EditCommentWrapper>
-            <ArrowImg src="/images/arrow_comment.png/" />
+            <ArrowIcon />
             <EditCommentInputWrapper>
               <EditInput
                 placeholder="수정할 댓글을 입력해주세요"

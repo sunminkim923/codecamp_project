@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FaUserCircle } from "react-icons/fa";
 
 export const Header = styled.div`
   width: 100%;
@@ -52,6 +53,11 @@ export const UserPoint = styled.div`
   font-size: 16px;
   font-weight: 700;
   /* letter-spacing: 1px; */
-  color: #1450f9 ;
+  color: #1450f9;
   cursor: pointer;
+`;
+
+export const ProfileIcon = styled(FaUserCircle)`
+  margin-right: 10px;
+  font-size: 18px;
 `;

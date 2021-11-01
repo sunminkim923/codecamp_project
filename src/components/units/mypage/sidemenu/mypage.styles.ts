@@ -1,4 +1,18 @@
 import styled from "@emotion/styled";
+import {
+  FaUserCircle,
+  FaPencilAlt,
+  FaTrash,
+  FaTimes,
+  FaCommentAlt,
+  FaHeart,
+  FaCommentDots,
+  FaReply,
+  FaLevelUpAlt,
+  FaPiggyBank,
+  FaDonate,
+  FaDollyFlatbed,
+} from "react-icons/fa";
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -17,7 +31,7 @@ export const UserInfoWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   text-align: center;
 `;
@@ -56,11 +70,6 @@ export const MyBasketWrapper = styled.div`
   align-items: center;
 `;
 
-export const BasketIcon = styled.img`
-  width: 20px;
-  height: 20px;
-`;
-
 export const MyBasket = styled.div`
   font-size: 18px;
   font-weight: 500;
@@ -83,11 +92,6 @@ export const MyProfileWrapper = styled.div`
   padding-top: 23px;
   display: flex;
   align-items: center;
-`;
-
-export const ProfileIcon = styled.img`
-  width: 20px;
-  height: 20px;
 `;
 
 export const MyProfile = styled.div`
@@ -158,5 +162,27 @@ export const ModalExitButton = styled.button`
   cursor: pointer;
   border: none;
   margin-top: 35px;
-  
+`;
+
+export const MainProfileWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const ProfileIconMain = styled(FaUserCircle)`
+  margin-top: 48px;
+  font-size: 90px;
+`;
+
+export const ProfileIcon = styled(FaUserCircle)`
+  font-size: 20px;
+`;
+
+export const PointIcon = styled(FaDonate)`
+  font-size: 20px;
+`;
+
+export const BasketIcon = styled(FaDollyFlatbed)`
+  font-size: 20px;
 `;

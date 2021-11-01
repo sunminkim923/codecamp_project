@@ -4,6 +4,7 @@ import { Modal, Tooltip } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import CommentWrite from "../commentWrite/commentWrite.container";
+import { getDate } from "../../../../../../commons/libraries/utils";
 import {
   DELETE_BOARD_COMMENT,
   FETCH_BOARD_COMMENTS,
@@ -11,19 +12,20 @@ import {
 import {
   Wrapper,
   HeadWrapper,
-  PofileImg,
+  ProfileIcon,
   ContentsWrapper,
   TopWrapper,
   WriterWrapper,
   WriterName,
   StarPoint,
   ButtonWrapper,
-  EditButton,
   DeleteButton,
   Contents,
   CreateDate,
   UnderLine,
   ModalInputWrapper,
+  EditIcon,
+  DeleteIcon,
 } from "./commentList.styles";
 
 export default function CommentListItem(props) {
@@ -82,7 +84,7 @@ export default function CommentListItem(props) {
   return (
     <Wrapper key={props.data._id}>
       <HeadWrapper>
-        <PofileImg src="/images/profile.svg/" />
+        <ProfileIcon />
         <ContentsWrapper>
           <TopWrapper>
             <WriterWrapper>
@@ -91,16 +93,10 @@ export default function CommentListItem(props) {
             </WriterWrapper>
             <ButtonWrapper>
               <Tooltip placement="top" title="수정하기">
-                <EditButton
-                  src="/images/commentEdit.svg/"
-                  onClick={onClickEdit}
-                />
+                <EditIcon onClick={onClickEdit} />
               </Tooltip>
               <Tooltip placement="top" title="삭제하기">
-                <DeleteButton
-                  src="/images/commentDelete.svg/"
-                  onClick={onClickDelete}
-                />
+                <DeleteIcon onClick={onClickDelete} />
               </Tooltip>
 
               {isModal && (
@@ -121,7 +117,7 @@ export default function CommentListItem(props) {
           <Contents>{props.data?.contents}</Contents>
         </ContentsWrapper>
       </HeadWrapper>
-      <CreateDate>{props.data?.createdAt}</CreateDate>
+      <CreateDate>{getDate(props.data?.createdAt)}</CreateDate>
       {isEdit && (
         <CommentWrite
           isEdit={isEdit}

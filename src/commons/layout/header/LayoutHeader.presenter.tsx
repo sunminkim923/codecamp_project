@@ -6,6 +6,7 @@ import {
   Text,
   HeightLine,
   UserPoint,
+  ProfileIcon,
 } from "./LayoutHeader.styles";
 
 import { Modal } from "antd";
@@ -24,7 +25,7 @@ export default function LayoutHeaderUI(props: any) {
         </UserWrapper>
       ) : (
         <UserWrapper>
-          <ProfileImg src="/images/profile.svg" />
+          <ProfileIcon />
           <Text onClick={props.onClickName}>
             {props.data?.fetchUserLoggedIn.name}님
           </Text>

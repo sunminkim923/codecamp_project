@@ -33,6 +33,8 @@ import {
   MapAddress,
   SellerName,
   SellerDate,
+  ProfileIcon,
+  HeartIcon,
 } from "./marketDetail.styles";
 import CommentWrite from "./comment/commentwrite/commentwrite.container";
 import CommentList from "./comment/commentlist/commentlist.container";
@@ -48,7 +50,7 @@ export default function MarketDetailUI(props) {
         <Wrapper>
           <HeadWrapper>
             <ProfileWrapper>
-              <Profile src="/images/profile.svg" />
+              <ProfileIcon />
               <WriterWrapper>
                 <SellerName>
                   {props.data?.fetchUseditem.seller?.name}
@@ -58,10 +60,6 @@ export default function MarketDetailUI(props) {
                 </SellerDate>
               </WriterWrapper>
             </ProfileWrapper>
-            <LocationWrapper>
-              <Icon01 src="/images/file.svg" />
-              <Location src="/images/local.svg" />
-            </LocationWrapper>
           </HeadWrapper>
           <UnderLine></UnderLine>
           <ProductTitleWrapper>
@@ -70,10 +68,7 @@ export default function MarketDetailUI(props) {
               <Product>{props.data?.fetchUseditem.name}</Product>
             </TitleWrapper>
             <LikePointWrapper>
-              <LikeHeart
-                src="/images/toggle_icon_filled.png"
-                onClick={props.onClickToggle}
-              />
+              <HeartIcon onClick={props.onClickToggle} />
               <LikePoint>{props.data?.fetchUseditem.pickedCount}</LikePoint>
             </LikePointWrapper>
           </ProductTitleWrapper>
