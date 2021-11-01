@@ -25,9 +25,13 @@ export const HeadWrapper = styled.div`
 
 export const ProfileWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 
-export const ProfileImg = styled.img``;
+export const ProfileImg = styled.img`
+  width: 54px;
+  height: 54px;
+`;
 
 export const WriterWrapper = styled.div`
   padding-left: 17px;
@@ -106,6 +110,8 @@ export const LikeWrapper = styled.div`
 `;
 
 export const LikeButton = styled.img`
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 `;
 
@@ -113,6 +119,7 @@ export const LikeCount = styled.div`
   font-size: 18px;
   font-weight: 400;
   color: #ffd600;
+  padding-top: 10px;
 `;
 
 export const DisLikeWrapper = styled.div`
@@ -127,12 +134,15 @@ export const DisLikeWrapper = styled.div`
 
 export const DisLikeButton = styled.img`
   cursor: pointer;
+  width: 24px;
+  height: 24px;
 `;
 
 export const DisLikeCount = styled.div`
   font-size: 18px;
   font-weight: 400;
   color: #828282;
+  padding-top: 10px;
 `;
 
 export const ButtonWrapper = styled.div`

@@ -60,7 +60,7 @@ export default function BoardListUI(props) {
                     src={
                       data.images[0]
                         ? `https://storage.googleapis.com/${data.images[0]}`
-                        : "/images/porsche01.png/"
+                        : "/images/mainIMG.jpg/"
                     }
                   />
                 </BestBoardImgWrapper>
@@ -75,7 +75,7 @@ export default function BoardListUI(props) {
                     <WriteDate>{getDate(data.createdAt)}</WriteDate>
                   </WriterWrapper>
                   <LikeBoardWrapper>
-                    <LikeBoardImg src="/images/likeboard.png/" />
+                    <LikeBoardImg src="/images/thumb_up.svg/" />
                     <LikeBoardPoint>{data.likeCount}</LikeBoardPoint>
                   </LikeBoardWrapper>
                 </BottomWrapper>

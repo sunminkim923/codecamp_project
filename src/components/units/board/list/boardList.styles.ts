@@ -92,8 +92,8 @@ export const WriteDate = styled.div`
 `;
 
 export const LikeBoardImg = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 `;
 
 export const LikeBoardPoint = styled.div`
