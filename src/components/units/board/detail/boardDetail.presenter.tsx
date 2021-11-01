@@ -43,7 +43,7 @@ export default function BoardDetailUI(props) {
         <Wrapper>
           <HeadWrapper>
             <ProfileWrapper>
-              <ProfileImg src="/images/profile.svg/" />
+              <ProfileImg src="/images/board_detail_profile.png/" />
               <WriterWrapper>
                 <Writer> {props.data?.fetchBoard.writer} </Writer>
                 <Date> Date: {getDate(props.data?.fetchBoard.createdAt)} </Date>
