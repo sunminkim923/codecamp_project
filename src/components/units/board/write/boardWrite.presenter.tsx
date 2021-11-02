@@ -54,7 +54,7 @@ export default function BoardWriteUI(props) {
                   type="text"
                   {...props.register("writer")}
                   // readOnly={props.data?.fetchBoard.writer}
-                  value={'관리자'}
+                  // value={'관리자'}
                 />
                 <Error>{props.errors.writer?.message}</Error>
               </WriterWrapper>
@@ -64,7 +64,7 @@ export default function BoardWriteUI(props) {
                   placeholder="비밀번호를 입력해주세요"
                   type="password"
                   {...props.register("password")}
-                  value={'123123'}
+                  // value={'123123'}
                 />
                 <Error>{props.errors.password?.message}</Error>
               </PasswordWrapper>
@@ -75,7 +75,7 @@ export default function BoardWriteUI(props) {
                 placeholder="제목을 입력해주세요"
                 type="text"
                 {...props.register("title")}
-                value={'테스트 입니다.'}
+                // value={'테스트 입니다.'}
               />
               <Error>{props.errors.title?.message}</Error>
             </TitleWrapper>
@@ -85,7 +85,7 @@ export default function BoardWriteUI(props) {
                 placeholder="내용을 입력해주세요"
                 type="text"
                 {...props.register("contents")}
-                value={'테스트 입니다.'}
+                // value={'테스트 입니다.'}
               />
               <Error>{props.errors.contents?.message}</Error>
             </ContentsWrapper>
@@ -134,7 +134,7 @@ export default function BoardWriteUI(props) {
                 type="text"
                 placeholder="링크를 입력하세요"
                 {...props.register("youtubeUrl")}
-                value={'https://www.youtube.com/watch?v=2pN4hSdV7RU'}
+                // value={'https://www.youtube.com/watch?v=2pN4hSdV7RU'}
               />
             </YoutubeWrapper>
             <Text>사진첨부</Text>
