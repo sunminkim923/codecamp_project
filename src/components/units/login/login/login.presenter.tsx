@@ -15,6 +15,8 @@ import {
   Checkbox,
   CheckboxWrapper,
   SocialLogin,
+  Admin,
+  AdminWrapper,
 } from "./login.styles";
 import Payment from "../../../commons/payment/payment";
 import KakaoLogin from "react-kakao-login";
@@ -53,10 +55,11 @@ export default function LoginUI(props: any) {
               {...props.register("password")}
             />
             <Error>{props.errors.password?.message}</Error>
-            <CheckboxWrapper>
-              <Checkbox type="checkbox" />
-              <KeepLogin>로그인상태 유지</KeepLogin>
-            </CheckboxWrapper>
+            <AdminWrapper>
+              <Admin>ID : admin@admin.com</Admin>
+              <Admin>PW : 123123123!</Admin>
+            </AdminWrapper>
+
             {/* @ts-ignore */}
             <LoginButton type="submit" isActive={props.isActive}>
               로그인하기

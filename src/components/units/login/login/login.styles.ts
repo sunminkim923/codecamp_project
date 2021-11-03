@@ -46,7 +46,7 @@ export const KeepLogin = styled.span`
 `;
 
 export const LoginButton = styled.button`
-  margin-top: 45px;
+  margin-top: 30px;
   width: 100%;
   height: 64px;
   border-radius: 15px;
@@ -95,4 +95,14 @@ export const SocialLogin = styled.img`
   width: 100%;
   height: 64px;
   border-radius: 15px;
+`;
+
+export const AdminWrapper = styled.div`
+  padding-top: 10px;
+  padding-left: 15px;
+`;
+
+export const Admin = styled.div`
+  color: red;
+  font-size: 12px;
 `;
