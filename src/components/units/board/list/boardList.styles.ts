@@ -30,7 +30,6 @@ export const BestBoardsWrapper = styled.div`
 export const BestBoardWrapper = styled.div`
   width: 282px;
   height: 257px;
-
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -49,10 +48,16 @@ export const BestBoardImg = styled.img`
 `;
 
 export const BestBoardTitle = styled.div`
-  padding-top: 20px;
+  margin-top: 20px;
   padding-left: 20px;
+  padding-right: 20px;
   font-size: 18px;
   font-weight: 500;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const BottomWrapper = styled.div`
@@ -83,6 +88,9 @@ export const WriterName = styled.div`
   font-size: 16px;
   font-weight: 400;
   padding-left: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const WriteDate = styled.div`
@@ -202,6 +210,9 @@ export const ListTitle = styled.div`
   font-weight: 400;
   color: #4f4f4f;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const ListWriter = styled.div`
@@ -210,6 +221,9 @@ export const ListWriter = styled.div`
   font-weight: 400;
   color: #4f4f4f;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const ListDate = styled.div`
