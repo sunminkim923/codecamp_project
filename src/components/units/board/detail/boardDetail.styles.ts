@@ -78,6 +78,7 @@ export const Title = styled.div`
 export const ImageBox = styled.img`
   width: 100%;
   height: 480px;
+  margin-top: 20px;
   background-color: #bdbdbd;
 `;
 
