@@ -4,6 +4,7 @@ import CommentList from "./comment/commentList/commentList.container";
 import { Modal } from "antd";
 import { getDate } from "../../../../commons/libraries/utils";
 import { Tooltip } from "antd";
+import Head from "next/head";
 import {
   PageWrapper,
   Wrapper,
@@ -40,6 +41,17 @@ import { FaUserCircle } from "react-icons/fa";
 export default function BoardDetailUI(props) {
   return (
     <>
+      <Head>
+        <meta property="og:title" content={props.data?.fetchBoard.title} />
+        <meta
+          property="og:contents"
+          content={props.data?.fetchBoard.contents}
+        />
+        <meta
+          property="og:images"
+          content={`https://storage.googleapis.com/${props.data?.fetchBoard.images[0]}`}
+        />
+      </Head>
       <PageWrapper>
         <Wrapper>
           <HeadWrapper>
