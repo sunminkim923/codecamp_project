@@ -5,6 +5,7 @@ import { Modal } from "antd";
 import { getDate } from "../../../../commons/libraries/utils";
 import { Tooltip } from "antd";
 import Head from "next/head";
+import { request } from "graphql-request";
 import {
   PageWrapper,
   Wrapper,
@@ -37,6 +38,7 @@ import {
   DisLikeBoardCount,
 } from "./boardDetail.styles";
 import { FaUserCircle } from "react-icons/fa";
+import request from "graphql-request";
 
 export default function BoardDetailUI(props) {
   return (
@@ -132,3 +134,15 @@ export default function BoardDetailUI(props) {
     </>
   );
 }
+
+export const getServerSideProps = async (context: any) => {
+  const result = await request(
+    "https://backend02.codebootcamp.co.kr/graphql05",
+    FETCH_BOARD,
+    {
+      boardId: context.query.Id,
+    }
+  );
+
+  return { props: { fetchBoard: result.fetchBoard } };
+};
