@@ -38,7 +38,6 @@ import {
   DisLikeBoardCount,
 } from "./boardDetail.styles";
 import { FaUserCircle } from "react-icons/fa";
-import request from "graphql-request";
 
 export default function BoardDetailUI(props) {
   return (
