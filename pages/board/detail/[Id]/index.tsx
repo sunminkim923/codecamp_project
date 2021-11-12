@@ -23,5 +23,5 @@ export default function DetailPage(props: any) {
 }
 
 export const getServerSideProps = () => {
-  <div>hello</div>;
+  <div>hellohellod</div>;
 };
