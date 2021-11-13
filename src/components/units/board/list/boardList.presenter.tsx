@@ -42,10 +42,10 @@ import {
   ProfileIcon,
   LikeBoardIcon,
 } from "./boardList.styles";
-import { FaUserCircle } from "react-icons/fa";
 
 //@ts-ignore
 export default function BoardListUI(props) {
+
   return (
     <PageWrapper>
       <Wrapper>

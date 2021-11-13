@@ -42,7 +42,7 @@ import { FaUserCircle } from "react-icons/fa";
 export default function BoardDetailUI(props) {
   return (
     <>
-      <Head>
+      {/* <Head>
         <meta property="og:title" content={props.data?.fetchBoard.title} />
         <meta
           property="og:contents"
@@ -52,7 +52,7 @@ export default function BoardDetailUI(props) {
           property="og:images"
           content={`https://storage.googleapis.com/${props.data?.fetchBoard.images[0]}`}
         />
-      </Head>
+      </Head> */}
       <PageWrapper>
         <Wrapper>
           <HeadWrapper>
@@ -134,14 +134,14 @@ export default function BoardDetailUI(props) {
   );
 }
 
-export const getServerSideProps = async (context: any) => {
-  const result = await request(
-    "https://backend02.codebootcamp.co.kr/graphql05",
-    FETCH_BOARD,
-    {
-      boardId: context.query.Id,
-    }
-  );
+// export const getServerSideProps = async (context: any) => {
+//   const result = await request(
+//     "https://backend02.codebootcamp.co.kr/graphql05",
+//     FETCH_BOARD,
+//     {
+//       boardId: context.query.Id,
+//     }
+//   );
 
-  return { props: { fetchBoard: result.fetchBoard } };
-};
+//   return { props: { fetchBoard: result.fetchBoard } };
+// };
