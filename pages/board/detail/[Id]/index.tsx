@@ -19,9 +19,9 @@ export default function DetailPage(props: any) {
         <meta property="og:title" content="MOCAR" />
         <meta
           property="og:image"
-          content={`https://storage.googleapis.com/${props?.fetchBoard.images[0]}`}
+          content={`https://storage.googleapis.com/${props?.fetchBoard?.images[0]}`}
         />
-        <meta property="og:description" content={props?.fetchBoard.contents} />
+        <meta property="og:description" content={props?.fetchBoard?.contents} />
       </Head>
       <BoardDetail />
     </>
