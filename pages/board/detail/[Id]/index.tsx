@@ -28,14 +28,14 @@ export default function DetailPage(props: any) {
   );
 }
 
-export const getServerSideProps = async (context: any) => {
-  const result = await request(
-    "https://backend02.codebootcamp.co.kr/graphql05",
-    FETCH_BOARD,
-    {
-      boardId: context.query.boardId,
-    }
-  );
+// export const getServerSideProps = async (context: any) => {
+//   const result = await request(
+//     "https://backend02.codebootcamp.co.kr/graphql",
+//     FETCH_BOARD,
+//     {
+//       boardId: context.query.boardId,
+//     }
+//   );
 
-  return { props: { fetchBoard: result.fetchBoard } };
-};
+//   return { props: { fetchBoard: result.fetchBoard } };
+// };

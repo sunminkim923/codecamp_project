@@ -136,7 +136,7 @@ export default function BoardDetailUI(props) {
 
 // export const getServerSideProps = async (context: any) => {
 //   const result = await request(
-//     "https://backend02.codebootcamp.co.kr/graphql05",
+//     "https://.codebootcamp.co.kr/graphql05",
 //     FETCH_BOARD,
 //     {
 //       boardId: context.query.Id,
