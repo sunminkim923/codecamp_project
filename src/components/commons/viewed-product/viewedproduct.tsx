@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { FaHeart, FaUserCircle } from "react-icons/fa";
+import { NumberWithCommas } from "../../../commons/libraries/utils";
 const Wrapper = styled.div`
   width: 196px;
   height: 100%;
@@ -52,18 +53,27 @@ const ProductName = styled.div`
   padding-top: 12px;
   font-size: 12px;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Remarks = styled.div`
   font-size: 12px;
   font-weight: 400;
   color: #4f4f4f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Price = styled.div`
   padding-top: 4px;
   font-size: 16px;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Tags = styled.div`
@@ -71,6 +81,9 @@ const Tags = styled.div`
   font-size: 10px;
   font-weight: 500;
   color: #bdbdbd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const HeartIcon = styled(FaHeart)`
@@ -99,7 +112,7 @@ export default function ViewedProduct(props: any) {
             </BodyWrapper>
             <ProductName>{data?.name}</ProductName>
             <Remarks> {data?.remarks} </Remarks>
-            <Price> {data?.price} 원 </Price>
+            <Price> {NumberWithCommas(data?.price)} 원 </Price>
             <Tags> {data?.tags} </Tags>
           </ProductWrapper>
         ))}

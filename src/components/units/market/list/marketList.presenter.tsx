@@ -1,6 +1,7 @@
 // @ts-nocheck
 import ViewedProduct from "../../../commons/viewed-product/viewedproduct";
 import InfiniteScroll from "react-infinite-scroller";
+import { NumberWithCommas } from "../../../../commons/libraries/utils";
 import {
   PageWrapper,
   Wrapper,
@@ -71,7 +72,9 @@ export default function MarketListUI(props) {
                 <BestProductInfoBottomWrapper>
                   <BestProductCharacterWrapper>
                     <BestProductRemarks>{data.remarks}</BestProductRemarks>
-                    <BestProductPrice>{data.price} 원</BestProductPrice>
+                    <BestProductPrice>
+                      {NumberWithCommas(data.price)} 원
+                    </BestProductPrice>
                   </BestProductCharacterWrapper>
                   <BestProductHeartPointWrapper>
                     <BestProductHeartIcon />
@@ -155,7 +158,7 @@ export default function MarketListUI(props) {
                         </ProfileWrapper>
                       </ContentsWrapper>
                       <PriceWrapper>
-                        <Price>{data.price} 원</Price>
+                        <Price>{NumberWithCommas(data.price)} 원</Price>
                       </PriceWrapper>
                     </ProductExplanationWrapper>
                   </ProductWrapper>

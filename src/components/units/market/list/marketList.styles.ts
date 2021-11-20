@@ -193,20 +193,32 @@ export const ProductExplanationWrapper = styled.div`
 `;
 
 export const ProductName = styled.div`
+  width: 700px;
   font-size: 24px;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const ProductCharacter = styled.div`
   font-size: 16px;
   font-weight: 500;
   color: #4f4f4f;
+  width: 700px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const ProductTag = styled.div`
   font-size: 16px;
   font-weight: 500;
   color: #bdbdbd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 700px;
 `;
 
 export const ProfileWrapper = styled.div`

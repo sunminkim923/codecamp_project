@@ -4,3 +4,7 @@ export function getDate(date: string) {
   const dd = new Date(date).getDate();
   return `${yyyy}-${mm}-${dd}`;
 }
+
+export const NumberWithCommas = (ViewPoint: number) => {
+  return ViewPoint?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
