@@ -280,7 +280,7 @@ export default function LandingUI() {
               <ProjectContentsWrapper>
                 <MyProjectStackTitle> 산책가까? </MyProjectStackTitle>
                 <ProjectNativeWrapper onClick={onClickNative}>
-                  <ProjectsImg src="/images/myprofile/test02.jpg" />
+                  <ProjectsImg src="/images/native-img.png" />
                   <MyProjectStackWrapper>
                     {/* <MyProjectStackTitle> 산책가까? </MyProjectStackTitle> */}
                     <MyProjectStackTextWrapper>

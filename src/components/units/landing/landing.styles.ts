@@ -373,6 +373,9 @@ export const ProjectsImg = styled.img`
   height: 300px;
   margin-top: 0px;
   border-radius: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const MyProjectStackWrapper = styled.div`
