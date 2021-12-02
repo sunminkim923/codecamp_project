@@ -1,9 +1,16 @@
+import { IQueryAnswerData } from "./recommentList.contatiner";
 import ReCommentListItem from "./recommentListItem";
 
-export default function ReCommentListUI(props: any) {
+interface IProps {
+  answerData: IQueryAnswerData | undefined;
+  loggedInuser: any;
+  commentId: any;
+}
+
+export default function ReCommentListUI(props: IProps) {
   return (
     <div>
-      {props.answerData?.fetchUseditemQuestionAnswers.map((data: any) => (
+      {props.answerData?.fetchUseditemQuestionAnswers.map((data) => (
         <ReCommentListItem
           key={data}
           data={data}

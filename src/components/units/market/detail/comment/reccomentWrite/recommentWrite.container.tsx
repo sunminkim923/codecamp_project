@@ -1,12 +1,16 @@
-// @ts-nocheck
 import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
-import { useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import { FETCH_USEDITEM_QUESTION_ANSWERS } from "../recommentlist/recommentList.queries";
 import RecommnetWriteUI from "./recommentWrite.presenter";
 import { CREATE_USEDITEM_QUESTION_ANSWER } from "./recommentWrite.queries";
 
-export default function RecommentWrite(props) {
+interface IProps {
+  data: any;
+  setIsRecomment: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function RecommentWrite(props: IProps) {
   const [textLength, setTextLength] = useState(0);
   const [contents, setContents] = useState("");
 
@@ -14,7 +18,7 @@ export default function RecommentWrite(props) {
     CREATE_USEDITEM_QUESTION_ANSWER
   );
 
-  const onChangeInput = (event) => {
+  const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     setTextLength(event.target.value.length);
     setContents(event.target.value);
   };
@@ -40,7 +44,7 @@ export default function RecommentWrite(props) {
       setContents("");
       props.setIsRecomment(false);
       Modal.info({ content: "댓글이 등록되었습니다." });
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };

@@ -12,7 +12,7 @@ export default function CommentWrite() {
   const [contents, setContents] = useState("");
   const [contentsLength, setContentsLength] = useState(0);
 
-  const onChangeContents = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeContents = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setContents(event.target.value);
     setContentsLength(event.target.value.length);
   };

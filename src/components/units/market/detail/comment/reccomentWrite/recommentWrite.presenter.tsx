@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { Tooltip } from "antd";
+import { ChangeEvent } from "react";
 import {
   Wrapper,
-  Arrow,
   InputWrapper,
   RecommentInput,
   BottomWrapper,
@@ -13,7 +12,15 @@ import {
   ArrowIcon,
 } from "./recommentWrite.styles";
 
-export default function RecommnetWriteUI(props) {
+interface IProps {
+  onChangeInput: (event: ChangeEvent<HTMLInputElement>) => void;
+  textLength: number;
+  contents: string;
+  onClickExit: () => void;
+  onClickSubmit: () => Promise<void>;
+}
+
+export default function RecommnetWriteUI(props: IProps) {
   return (
     <>
       <ExitWrapper>
