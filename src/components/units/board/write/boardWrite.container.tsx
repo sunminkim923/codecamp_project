@@ -1,24 +1,60 @@
-//@ts-nocheck
-
 import BoardWriteUI from "./boardWrite.presenter";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { FieldValues, FormState, useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useMutation } from "@apollo/client";
+import {
+  DocumentNode,
+  FetchResult,
+  MutationFunctionOptions,
+  OperationVariables,
+  useMutation,
+} from "@apollo/client";
 import { CREATE_BOARD, UPDATE_BOARD, UPLOAD_FILE } from "./boardWrite.queries";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { IQueryData } from "../../../../../pages/board/detail/[Id]/edit";
 
-export default function BoardWrite(props) {
-  const [createBoard] = useMutation(CREATE_BOARD);
-  const [uploadFile] = useMutation(UPLOAD_FILE);
-  const [updateBoard] = useMutation(UPDATE_BOARD);
+export interface IProps {
+  isEdit: boolean;
+  data: IQueryData | undefined;
+}
 
-  const [imageFile, setImageFile] = useState([]);
-  const [isModal, setIsModal] = useState(false);
-  const [address, setAddress] = useState("");
-  const [zipCode, setZipCode] = useState("");
+export interface IOnSubmitData {
+  data: string;
+  createBoard: (
+    options?: MutationFunctionOptions<any, OperationVariables> | undefined
+  ) => Promise<FetchResult<any, Record<string, any>, Record<string, any>>>;
+  writer: string;
+  title: string;
+  password: string;
+  contents: string;
+  youtubeUrl: string;
+  addressDetail: string;
+}
+
+export interface IOnEditData {
+  password: string;
+  title: string;
+  contents: string;
+  youtubeUrl: string;
+  addressDetail: string;
+}
+
+export interface IOnCompleteData {
+  address: string;
+  zonecode: string;
+}
+
+export default function BoardWrite(props: IProps) {
+  const [createBoard] = useMutation<any, OperationVariables>(CREATE_BOARD);
+  const [uploadFile] = useMutation<any, OperationVariables>(UPLOAD_FILE);
+  const [updateBoard] = useMutation<any, OperationVariables>(UPDATE_BOARD);
+
+  const [imageFile, setImageFile] = useState<string[]>([]);
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const [address, setAddress] = useState<string>("");
+  const [zipCode, setZipCode] = useState<string>("");
 
   const router = useRouter();
 
@@ -33,7 +69,7 @@ export default function BoardWrite(props) {
     addressDetail: yup.string(),
   });
 
-  const { handleSubmit, register, formState, setValue, trigger } = useForm({
+  const { handleSubmit, register, formState, setValue } = useForm({
     mode: "onChange",
     resolver: yupResolver(schema),
   });
@@ -66,7 +102,7 @@ export default function BoardWrite(props) {
     }
   }, [props.data, setValue]);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: IOnSubmitData) => {
     try {
       const resultFiles = await Promise.all(
         imageFile.map((fileData) =>
@@ -97,12 +133,12 @@ export default function BoardWrite(props) {
       });
       Modal.info({ content: "게시글을 등록합니다." });
       router.push(`/board/detail/${result.data?.createBoard._id}`);
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
 
-  const onEdit = async (data) => {
+  const onEdit = async (data: IOnEditData) => {
     try {
       const resultFiles = await Promise.all(
         imageFile.map((fileData) =>
@@ -133,7 +169,7 @@ export default function BoardWrite(props) {
       });
       Modal.info({ content: "게시글이 수정되었습니다." });
       router.push(`/board/detail/${result.data?.updateBoard._id}`);
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
@@ -146,7 +182,7 @@ export default function BoardWrite(props) {
     setIsModal(false);
   };
 
-  const onComplete = (data) => {
+  const onComplete = (data: IOnCompleteData) => {
     setAddress(data.address);
     setZipCode(data.zonecode);
   };

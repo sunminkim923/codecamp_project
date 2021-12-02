@@ -1,8 +1,12 @@
-// @ts-nocheck
+import { IQueryCommentData } from "./commentList.container";
 import { PageWrapper } from "./commentList.styles";
 import CommentListItem from "./commentListItem";
 
-export default function CommentListUI(props) {
+interface IProps {
+  commentData: IQueryCommentData | undefined;
+}
+
+export default function CommentListUI(props: IProps) {
   return (
     <PageWrapper>
       {props.commentData?.fetchBoardComments.map((data) => (

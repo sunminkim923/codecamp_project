@@ -1,42 +1,65 @@
-// @ts-nocheck
 import { useForm } from "react-hook-form";
 import CommentWriteUI from "./commentWrite.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useMutation, useQuery } from "@apollo/client";
+import { OperationVariables, useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import {
   CREATE_BAORD_COMMENT,
   UPDATE_BOARD_COMMENT,
 } from "./commentWrite.queries";
 import { FETCH_BOARD_COMMENTS } from "../commentList/commentList.queries";
-import { useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import { Modal } from "antd";
 
-export default function CommentWrite(props) {
-  const [createBoardComment] = useMutation(CREATE_BAORD_COMMENT);
-  const [updateBoardComment] = useMutation(UPDATE_BOARD_COMMENT);
+interface IProps {
+  isEdit: boolean;
+  data: any;
+  setIsEdit: Dispatch<SetStateAction<boolean>>;
+  onClickExit: () => void;
+}
+
+export interface IonSubmitData {
+  data: string;
+  writer: string;
+  password: string;
+  contents: string;
+}
+
+export interface IonEditData {
+  data: string;
+  contents: string;
+  password: string;
+}
+
+export default function CommentWrite(props: IProps) {
+  const [createBoardComment] = useMutation<any, OperationVariables>(
+    CREATE_BAORD_COMMENT
+  );
+  const [updateBoardComment] = useMutation<any, OperationVariables>(
+    UPDATE_BOARD_COMMENT
+  );
   const router = useRouter();
-  const [inputWriter, setInputWriter] = useState("");
-  const [inputPassword, setInputPassword] = useState("");
-  const [inputContents, setInputContents] = useState("");
-  const [inputRating, setInputRating] = useState(0);
-  const [commentLength, setCommentLength] = useState(0);
-  //@ts-ignore
-  const onChangeInputWriter = (event) => {
+  const [inputWriter, setInputWriter] = useState<string>("");
+  const [inputPassword, setInputPassword] = useState<string>("");
+  const [inputContents, setInputContents] = useState<string>("");
+  const [inputRating, setInputRating] = useState<number>(0);
+  const [commentLength, setCommentLength] = useState<number>(0);
+
+  const onChangeInputWriter = (event: ChangeEvent<HTMLInputElement>) => {
     setInputWriter(event.target.value);
   };
 
-  const onChangeInputPassword = (event) => {
+  const onChangeInputPassword = (event: ChangeEvent<HTMLInputElement>) => {
     setInputPassword(event.target.value);
   };
 
-  const onChangeInPutContents = (event) => {
+  const onChangeInPutContents = (event: ChangeEvent<HTMLInputElement>) => {
     setInputContents(event.target.value);
     setCommentLength(event.target.value.length);
   };
 
-  const onChangeRating = (event) => {
+  const onChangeRating = (event: any) => {
     setInputRating(event);
   };
 
@@ -51,7 +74,7 @@ export default function CommentWrite(props) {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: IonSubmitData) => {
     try {
       const result = await createBoardComment({
         variables: {
@@ -76,12 +99,12 @@ export default function CommentWrite(props) {
       setInputPassword("");
       setInputContents("");
       setInputRating(0);
-    } catch (error) {
+    } catch (error: unknown | any) {
       alert(error.message);
     }
   };
 
-  const onEdit = async (data) => {
+  const onEdit = async (data: IonEditData) => {
     try {
       await updateBoardComment({
         variables: {
@@ -101,7 +124,7 @@ export default function CommentWrite(props) {
       });
       props.setIsEdit(false);
       Modal.info({ content: "댓글을 수정합니다." });
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };

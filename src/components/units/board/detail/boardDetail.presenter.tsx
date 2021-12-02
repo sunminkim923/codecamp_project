@@ -1,4 +1,3 @@
-// @ts-nocheck
 import CommentWrite from "./comment/commentWrite/commentWrite.container";
 import CommentList from "./comment/commentList/commentList.container";
 import { Modal } from "antd";
@@ -38,8 +37,23 @@ import {
   DisLikeBoardCount,
 } from "./boardDetail.styles";
 import { FaUserCircle } from "react-icons/fa";
+import { IQueryData } from "./boardDetail.container";
+import { SetStateAction } from "react";
 
-export default function BoardDetailUI(props) {
+interface IProps {
+  onClickList: () => void;
+  data: IQueryData | undefined;
+  onClickEdit: () => void;
+  onClickDelete: () => void;
+  onClickCancel: () => void;
+  onClickOk: () => Promise<void>;
+  isModal: boolean;
+  isOpen: boolean;
+  onClickLike: () => void;
+  onClickDislike: () => void;
+}
+
+export default function BoardDetailUI(props: IProps) {
   return (
     <>
       {/* <Head>
@@ -79,7 +93,7 @@ export default function BoardDetailUI(props) {
           </HeadWrapper>
           <UnderLine01 />
           <Title> {props.data?.fetchBoard.title} </Title>
-          {props.data?.fetchBoard.images.map((data) => (
+          {props.data?.fetchBoard.images.map((data: string) => (
             <ImageBox
               key={data}
               src={data ? `https://storage.googleapis.com/${data}` : ""}
@@ -127,7 +141,16 @@ export default function BoardDetailUI(props) {
           )}
         </ButtonWrapper>
         <UnderLine02 />
-        <CommentWrite />
+        <CommentWrite
+          isEdit={false}
+          data={undefined}
+          setIsEdit={function (value: SetStateAction<boolean>): void {
+            throw new Error("Function not implemented.");
+          }}
+          onClickExit={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
         <CommentList />
       </PageWrapper>
     </>

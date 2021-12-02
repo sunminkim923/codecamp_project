@@ -1,5 +1,11 @@
-//@ts-nocheck
-import { Modal, Tooltip } from "antd";
+import { Tooltip } from "antd";
+import { ChangeEvent } from "react";
+import {
+  FieldValues,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import { IonEditData, IonSubmitData } from "./commentWrite.container";
 import {
   PageWrapper,
   Wrapper,
@@ -18,7 +24,26 @@ import {
   ExitIcon,
 } from "./commentWrite.styles";
 
-export default function CommentWriteUI(props) {
+interface IProps {
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  onSubmit: (data: IonSubmitData) => Promise<void>;
+  inputWriter: string;
+  onChangeInputWriter: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeInputPassword: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeInPutContents: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeRating: (event: any) => void;
+  inputPassword: string;
+  inputContents: string;
+  inputRating: number;
+  isEdit: boolean;
+  onEdit: (data: IonEditData) => Promise<void>;
+  data: any;
+  commentLength: number;
+  onClickExit: () => void;
+}
+
+export default function CommentWriteUI(props: IProps) {
   return (
     <PageWrapper>
       <form

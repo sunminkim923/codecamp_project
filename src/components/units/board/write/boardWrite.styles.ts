@@ -1,5 +1,9 @@
-//@ts-nocheck
 import styled from "@emotion/styled";
+
+interface IProps {
+  address: string;
+  isActive: boolean;
+}
 
 export const PageWrapper = styled.div`
   width: 100%;
@@ -97,7 +101,7 @@ export const ZipCode = styled.input`
   border: 1px solid #bdbdbd;
   text-align: center;
   font-size: 16px;
-  color: ${(props) => (props.address ? "" : "#bdbdbd")};
+  color: ${(props: IProps) => (props.address ? "" : "#bdbdbd")};
 `;
 export const SearchAddress = styled.button`
   background-color: black;
@@ -115,7 +119,7 @@ export const Address = styled.input`
   font-size: 16px;
   display: flex;
   align-items: center;
-  color: ${(props) => (props.address ? "" : "#bdbdbd")};
+  color: ${(props: string | any) => (props.address ? "" : "#bdbdbd")};
 `;
 export const AddressDetail = styled.input`
   width: 100%;
@@ -176,8 +180,8 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
-  color: ${(props) => (props.isActive ? "#ffffff" : "")};
+  background-color: ${(props: IProps) => (props.isActive ? "#1450f9" : "")};
+  color: ${(props: IProps) => (props.isActive ? "#ffffff" : "")};
 `;
 
 export const Error = styled.div`

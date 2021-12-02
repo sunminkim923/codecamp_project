@@ -1,5 +1,4 @@
-//@ts-nocheck
-import { useMutation, useQuery } from "@apollo/client";
+import { OperationVariables, useMutation } from "@apollo/client";
 import { Modal, Tooltip } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
@@ -19,7 +18,6 @@ import {
   WriterName,
   StarPoint,
   ButtonWrapper,
-  DeleteButton,
   Contents,
   CreateDate,
   UnderLine,
@@ -28,14 +26,18 @@ import {
   DeleteIcon,
 } from "./commentList.styles";
 
-export default function CommentListItem(props) {
-  const [isEdit, setIsEdit] = useState(false);
-  const [isModal, setIsModal] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [password, setPassword] = useState("");
-  const [onCancel, setOnCancel] = useState(false);
-  const [onOk, setOnOk] = useState(false);
-  const [deleteBoardComment] = useMutation(DELETE_BOARD_COMMENT);
+interface IProps {
+  data: string | any;
+}
+
+export default function CommentListItem(props: IProps) {
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [password, setPassword] = useState<string>("");
+  const [deleteBoardComment] = useMutation<any, OperationVariables>(
+    DELETE_BOARD_COMMENT
+  );
 
   const router = useRouter();
 
@@ -68,12 +70,12 @@ export default function CommentListItem(props) {
       });
       setIsOpen(false);
       alert("댓글이 삭제되었습니다.");
-    } catch (error) {
+    } catch (error: unknown | any) {
       alert(error.message);
     }
   };
 
-  const onChangePassword = (event: ChangeEvent) => {
+  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
 

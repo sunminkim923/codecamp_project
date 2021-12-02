@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Pagenation from "../../../commons/pagenations/pagenations.container";
 import { getDate } from "../../../../commons/libraries/utils";
 import {
@@ -42,18 +41,33 @@ import {
   ProfileIcon,
   LikeBoardIcon,
 } from "./boardList.styles";
+import { ApolloQueryResult, OperationVariables } from "@apollo/client";
+import { ChangeEvent, Key } from "react";
+import { IBestData, IData } from "./boardList.container";
 
-//@ts-ignore
-export default function BoardListUI(props) {
+interface IProps {
+  data: IData | undefined;
+  bestData: IBestData | undefined;
+  onClickBestBoard: (data: string) => void;
+  onClickBoard: (data: string) => void;
+  onClickSubmit: () => void;
+  refetch: (
+    variables?: Partial<OperationVariables> | undefined
+  ) => Promise<ApolloQueryResult<IData>>;
+  boardCountData: string | undefined;
+  search: string;
+  keyword: string;
+  onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
+export default function BoardListUI(props: IProps) {
   return (
     <PageWrapper>
       <Wrapper>
         <HeadWrapper>
           <Title>베스트 게시글</Title>
           <BestBoardsWrapper>
-            {/* @ts-ignore */}
-            {props.bestData?.fetchBoardsOfTheBest.map((data) => (
+            {props.bestData?.fetchBoardsOfTheBest.map((data: string | any) => (
               <BestBoardWrapper
                 onClick={() => props.onClickBestBoard(data._id)}
                 key={data._id}
@@ -91,7 +105,7 @@ export default function BoardListUI(props) {
             placeholder="제목을 검색해주세요"
             onChange={props.onChangeSearch}
           />
-          {/* <DateInput placeholder="YYYY.MM.DD ~ YYYY.MM.DD" /> */}
+
           <SearchButton>검색하기</SearchButton>
         </SearchWrapper>
         <BoardListWrapper>
@@ -101,8 +115,8 @@ export default function BoardListUI(props) {
             <HeadWriter>작성자</HeadWriter>
             <HeadDate>날짜</HeadDate>
           </ListHeadWrapper>
-          {/* @ts-ignore */}
-          {props.data?.fetchBoards.map((data, index) => (
+
+          {props.data?.fetchBoards.map((data: string | any, index) => (
             <ListBodyWrapper
               key={data._id}
               onClick={() => props.onClickBoard(data._id)}
@@ -112,16 +126,21 @@ export default function BoardListUI(props) {
                 {data.title
                   .replaceAll(props.keyword, `$!${props.keyword}$!`)
                   .split("$!")
-                  .map((keywordData, index) => (
-                    <Keyword
-                      id={keywordData._id}
-                      key={index}
-                      isMatched={props.keyword === keywordData}
-                      onClick={() => props.onClickBoard(data._id)}
-                    >
-                      {keywordData}
-                    </Keyword>
-                  ))}
+                  .map(
+                    (
+                      keywordData: {} | null | undefined | any,
+                      index: Key | null | undefined
+                    ) => (
+                      <Keyword
+                        id={keywordData._id}
+                        key={index}
+                        isMatched={props.keyword === keywordData}
+                        onClick={() => props.onClickBoard(data._id)}
+                      >
+                        {keywordData}
+                      </Keyword>
+                    )
+                  )}
               </ListTitle>
               <ListWriter>{data.writer}</ListWriter>
               <ListDate>{getDate(data.createdAt)}</ListDate>

@@ -1,7 +1,21 @@
-//@ts-nocheck
 import { Modal } from "antd";
+import { Dispatch, SetStateAction } from "react";
 import DaumPostcode from "react-daum-postcode";
+import {
+  DeepMap,
+  FieldError,
+  FieldValues,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import { IQueryData } from "../../../../../pages/board/detail/[Id]/edit";
 import ImageUpload from "../../../commons/imageupload/imageupload";
+import {
+  IOnCompleteData,
+  IOnEditData,
+  IOnSubmitData,
+} from "./boardWrite.container";
+
 import {
   Wrapper,
   PageWrapper,
@@ -34,8 +48,25 @@ import {
   Error,
 } from "./boardWrite.styles";
 
-// @ts-ignore
-export default function BoardWriteUI(props) {
+interface IProps {
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  errors: DeepMap<FieldValues, FieldError>;
+  onSubmit: (data: IOnSubmitData) => Promise<void>;
+  isActive: boolean;
+  setImageFile: Dispatch<SetStateAction<string[]>>;
+  isEdit: boolean;
+  onEdit: (data: IOnEditData) => Promise<void>;
+  onClicksearchAdress: () => void;
+  isModal: boolean;
+  onClickCancel: () => void;
+  onComplete: (data: IOnCompleteData) => void;
+  address: string | any;
+  zipCode: string;
+  data: IQueryData | undefined;
+}
+
+export default function BoardWriteUI(props: IProps) {
   return (
     <>
       <PageWrapper>
@@ -75,7 +106,6 @@ export default function BoardWriteUI(props) {
                 placeholder="제목을 입력해주세요"
                 type="text"
                 {...props.register("title")}
-                // value={'테스트 입니다.'}
               />
               <Error>{props.errors.title?.message}</Error>
             </TitleWrapper>
@@ -83,9 +113,9 @@ export default function BoardWriteUI(props) {
               <Text>내용</Text>
               <Contents
                 placeholder="내용을 입력해주세요"
+                //@ts-ignore
                 type="text"
                 {...props.register("contents")}
-                // value={'테스트 입니다.'}
               />
               <Error>{props.errors.contents?.message}</Error>
             </ContentsWrapper>
@@ -93,6 +123,8 @@ export default function BoardWriteUI(props) {
               <Text>주소</Text>
               <ZipCodeWrapper>
                 <ZipCode
+                  isActive={false}
+                  //@ts-ignore
                   address={props.address}
                   placeholder={props.address ? props.zipCode : "우편번호"}
                   {...props.register("zipCode")}
@@ -107,6 +139,7 @@ export default function BoardWriteUI(props) {
               </ZipCodeWrapper>
               {props.isModal && (
                 <Modal
+                  //@ts-ignore
                   text="주소를 입력하세요"
                   visible={props.isModal}
                   onOk={props.onClickCancel}
@@ -116,6 +149,7 @@ export default function BoardWriteUI(props) {
                 </Modal>
               )}
               <Address
+                //@ts-ignore
                 address={props.address}
                 placeholder={
                   props.address ? props.address : "주소를 검색해주세요"
@@ -141,15 +175,13 @@ export default function BoardWriteUI(props) {
             <UploadWrapper>
               <ImageUpload setImageFile={props.setImageFile} />
             </UploadWrapper>
-            {/* <RadioWrapper>
-              <Text>메인설정</Text>
-              <Radio type="radio" name="radio" id="youtube" />
-              <lavel for="youtube">유튜브</lavel>
-              <Radio type="radio" name="radio" />
-              <Text02>사진</Text02>
-            </RadioWrapper> */}
+
             <SubmitButtonWrapper>
-              <SubmitButton type="submit" isActive={props.isActive}>
+              <SubmitButton
+                type="submit"
+                isActive={props.isActive}
+                address={""}
+              >
                 {props.isEdit ? "수정하기" : "등록하기"}
               </SubmitButton>
             </SubmitButtonWrapper>

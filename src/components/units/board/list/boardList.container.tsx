@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
@@ -11,21 +9,33 @@ import {
 } from "./boardList.queries";
 import _ from "lodash";
 
+export interface IData {
+  data?: string;
+  index?: number;
+  fetchBoards: string[];
+}
+
+export interface IBestData {
+  bestData?: string;
+  index?: number;
+  fetchBoardsOfTheBest: string[];
+}
+
 export default function BoardList() {
   const router = useRouter();
-  const { data, refetch } = useQuery(FETCH_BOARDS);
-  const { data: bestData } = useQuery(FETCH_BOARDS_OF_THE_BEST);
+  const { data, refetch } = useQuery<IData>(FETCH_BOARDS);
+  const { data: bestData } = useQuery<IBestData>(FETCH_BOARDS_OF_THE_BEST);
   const { data: boardCountData, refetch: searchRefetch } =
-    useQuery(FETCH_BOARDS_COUNT);
+    useQuery<string>(FETCH_BOARDS_COUNT);
 
   const [search, setSearch] = useState("");
   const [keyword, setKeyword] = useState("");
 
-  const onClickBestBoard = (data) => {
+  const onClickBestBoard = (data: string) => {
     router.push(`/board/detail/${data}`);
   };
 
-  const onClickBoard = (data) => {
+  const onClickBoard = (data: string) => {
     router.push(`/board/detail/${data}`);
   };
 
@@ -33,7 +43,7 @@ export default function BoardList() {
     router.push("/board/write/");
   };
 
-  const getDebounce = _.debounce((data) => {
+  const getDebounce = _.debounce((data: string) => {
     refetch({ search: data });
     setSearch(data);
     searchRefetch({ search: data });
