@@ -11,7 +11,7 @@ import Layout from "../src/commons/layout";
 import { Global } from "@emotion/react";
 import { globalstyles } from "../src/commons/styles/globalstyles";
 import { createUploadLink } from "apollo-upload-client";
-import { createContext, useEffect } from "react";
+import { createContext, Dispatch, SetStateAction, useEffect } from "react";
 import { useState } from "react";
 import { getAccessToken } from "../src/commons/libraries/getaccesstoken";
 import { onError } from "@apollo/client/link/error";
@@ -26,10 +26,15 @@ import { onError } from "@apollo/client/link/error";
 //   });
 // }
 
-export const GlobalContext = createContext({});
+interface IGlobalContext {
+  setAccessToken: Dispatch<SetStateAction<string>>;
+}
+
+export const GlobalContext = createContext<IGlobalContext>({});
 function MyApp({ Component, pageProps }: AppProps) {
   const [accessToken, setAccessToken] = useState("");
   const [userInfo, setUserInfo] = useState({});
+
   const value = {
     accessToken: accessToken,
     setAccessToken: setAccessToken,

@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import {
   PageWrapper,
   Wrapper,
@@ -12,7 +13,14 @@ import {
   CommnetIcon,
 } from "./commentwrite.styles";
 
-export default function CommentWriteUI(props: any) {
+interface IProps {
+  onClickRegister: () => Promise<void>;
+  onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  contentsLength: number;
+  contents: string;
+}
+
+export default function CommentWriteUI(props: IProps) {
   return (
     <PageWrapper>
       <Wrapper>

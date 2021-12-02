@@ -1,4 +1,11 @@
 import {
+  DeepMap,
+  FieldError,
+  FieldValues,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import {
   PageWrapper,
   Wrapper,
   Title,
@@ -8,8 +15,20 @@ import {
   Error,
 } from "./signUp.styles";
 
-// @ts-ignore
-export default function SignUpUI(props) {
+interface IProps {
+  onSubmit: (data: {
+    data: string;
+    name: string;
+    email: string;
+    password: string;
+  }) => Promise<void>;
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  isActive: boolean;
+  errors: DeepMap<FieldValues, FieldError>;
+}
+
+export default function SignUpUI(props: IProps) {
   return (
     <PageWrapper>
       <Wrapper>
@@ -43,7 +62,7 @@ export default function SignUpUI(props) {
             {...props.register("confirmPassword")}
           />
           <Error>{props.errors.confirmPassword?.message}</Error>
-          {/* @ts-ignore */}
+
           <JoinButton type="submit" isActive={props.isActive}>
             회원가입하기
           </JoinButton>

@@ -35,8 +35,13 @@ export default function SignUp() {
     mode: "onChange",
     resolver: yupResolver(schema),
   });
-  // @ts-ignore
-  async function onSubmit(data) {
+
+  async function onSubmit(data: {
+    data: string;
+    name: string;
+    email: string;
+    password: string;
+  }) {
     try {
       const result = await createUser({
         variables: {

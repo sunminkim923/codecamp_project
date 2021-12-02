@@ -1,4 +1,3 @@
-//@ts-nocheck
 import styled from "@emotion/styled";
 
 export const PageWrapper = styled.div`
@@ -34,7 +33,7 @@ export const InputBox = styled.input`
   padding-left: 16px;
   border-radius: 15px;
 `;
-//@ts-ignore
+
 export const JoinButton = styled.button`
   margin-top: 60px;
   width: 100%;
@@ -43,8 +42,9 @@ export const JoinButton = styled.button`
   border-radius: 15px;
   font-size: 16px;
   font-weight: 700;
-  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
-  color: ${(props) => (props.isActive ? "#ffffff" : "")};
+  background-color: ${(props: { isActive: boolean }) =>
+    props.isActive ? "#1450f9" : ""};
+  color: ${(props: { isActive: boolean }) => (props.isActive ? "#ffffff" : "")};
 `;
 
 export const Error = styled.div`

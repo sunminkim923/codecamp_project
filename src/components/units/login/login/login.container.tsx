@@ -10,10 +10,7 @@ import { GlobalContext } from "../../../../../pages/_app";
 import { useContext } from "react";
 
 export default function Login() {
-  //@ts-ignore
   const { setAccessToken } = useContext(GlobalContext);
-  const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
-  const client = useApolloClient();
 
   const schema = yup.object().shape({
     email: yup
@@ -29,8 +26,11 @@ export default function Login() {
   });
   const [loginUser] = useMutation(LOGIN_USER);
 
-  //@ts-ignore
-  async function onSubmit(data) {
+  async function onSubmit(data: {
+    data: string;
+    email: string;
+    password: string;
+  }) {
     try {
       const result = await loginUser({
         variables: {

@@ -1,5 +1,8 @@
-//@ts-nocheck
 import styled from "@emotion/styled";
+
+interface IProps {
+  isActive: boolean;
+}
 
 export const PageWrapper = styled.div`
   width: 100%;
@@ -51,8 +54,8 @@ export const LoginButton = styled.button`
   height: 64px;
   border-radius: 15px;
   border: 0.5px solid lightgray;
-  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
-  color: ${(props) => (props.isActive ? "#ffffff" : "")};
+  background-color: ${(props: IProps) => (props.isActive ? "#1450f9" : "")};
+  color: ${(props: IProps) => (props.isActive ? "#ffffff" : "")};
   font-size: 18px;
 `;
 

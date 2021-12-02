@@ -1,6 +1,6 @@
 import ReCommentList from "../recommentlist/recommentList.contatiner";
 import RecommentWrite from "../reccomentWrite/recommentWrite.container";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { getDate } from "../../../../../../commons/libraries/utils";
 
 import {
@@ -34,7 +34,7 @@ import {
   DeleteIcon,
   ExitIcon,
 } from "./commentlist.styles";
-import { useMutation } from "@apollo/client";
+import { OperationVariables, useMutation } from "@apollo/client";
 import {
   DELETE_USEDITEM_QUESTION,
   FETCH_USEDITEM_QUESTIONS,
@@ -42,18 +42,29 @@ import {
 } from "./commentlist.queries";
 import { Modal, Tooltip } from "antd";
 import { useRouter } from "next/router";
+import { IQueryCommentData } from "./commentlist.container";
 
-export default function CommentListItem(props: any) {
-  const [isEdit, setIsEdit] = useState(false);
-  const [isRecomment, setIsRecomment] = useState(false);
-  const [textLength, setTextLength] = useState(0);
-  const [contents, setContents] = useState("");
-  const [isModal, setIsModal] = useState(false);
+interface IProps {
+  data: string | any;
+  commentData: IQueryCommentData | undefined;
+  loggedInUser: string;
+}
+
+export default function CommentListItem(props: IProps) {
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isRecomment, setIsRecomment] = useState<boolean>(false);
+  const [textLength, setTextLength] = useState<number>(0);
+  const [contents, setContents] = useState<string>("");
+  const [isModal, setIsModal] = useState<boolean>(false);
 
   const router = useRouter();
 
-  const [updateUseditemQuestion] = useMutation(UPDATE_USEDITEM_QUESTION);
-  const [deleteUseditemQuestion] = useMutation(DELETE_USEDITEM_QUESTION);
+  const [updateUseditemQuestion] = useMutation<any, OperationVariables>(
+    UPDATE_USEDITEM_QUESTION
+  );
+  const [deleteUseditemQuestion] = useMutation<any, OperationVariables>(
+    DELETE_USEDITEM_QUESTION
+  );
 
   const onClickEdit = () => {
     setIsEdit(true);
@@ -67,8 +78,7 @@ export default function CommentListItem(props: any) {
     setIsRecomment(true);
   };
 
-  //@ts-ignore
-  const onChangeText = (event) => {
+  const onChangeText = (event: ChangeEvent<HTMLInputElement>) => {
     setContents(event.target.value);
     setTextLength(event.target.value.length);
   };
@@ -91,8 +101,7 @@ export default function CommentListItem(props: any) {
       });
       setIsEdit(false);
       Modal.info({ content: "댓글을 수정합니다." });
-    } catch (error) {
-      //@ts-ignore
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
@@ -118,8 +127,7 @@ export default function CommentListItem(props: any) {
       });
       Modal.info({ content: "댓글이 삭제되었습니다." });
       setIsModal(false);
-    } catch (error) {
-      //@ts-ignore
+    } catch (error: unknown | any) {
       alert(error.message);
     }
   };

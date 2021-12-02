@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import CommentWriteUI from "./commentwrite.presenter";
 import { CREATE_USEDITEM_QUESTION } from "./commentwrite.queries";
 import { FETCH_USEDITEM_QUESTIONS } from "../commentlist/commentlist.queries";
@@ -12,14 +12,12 @@ export default function CommentWrite() {
   const [contents, setContents] = useState("");
   const [contentsLength, setContentsLength] = useState(0);
 
-  //@ts-ignore
-  const onChangeContents = (event) => {
+  const onChangeContents = (event: ChangeEvent<HTMLInputElement>) => {
     setContents(event.target.value);
     setContentsLength(event.target.value.length);
   };
 
-  //@ts-ignore
-  const onClickRegister = async (data) => {
+  const onClickRegister = async () => {
     try {
       const result = await createUseditemQuestion({
         variables: {
@@ -36,8 +34,7 @@ export default function CommentWrite() {
       Modal.info({ content: "댓글을 등록합니다." });
       setContents("");
       setContentsLength(0);
-    } catch (error) {
-      //@ts-ignore
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
