@@ -1,4 +1,3 @@
-//@ts-nocheck
 import {
   PageWrapper,
   Wrapper,
@@ -41,9 +40,25 @@ import CommentList from "./comment/commentlist/commentlist.container";
 import ReComment from "./comment/recommentlist/recommentList.contatiner";
 import { Modal } from "antd";
 import { getDate } from "../../../../commons/libraries/utils";
+import { IQueryData } from "./marketDetail.container";
 
-//@ts-ignore
-export default function MarketDetailUI(props) {
+interface IProps {
+  data: IQueryData | undefined;
+  onClickToggle: () => void;
+  onClickList: () => void;
+  onClickEdit: () => void;
+  onClickDelete: () => void;
+  onClickOk: any;
+  onClickCancel: () => void;
+  isModal: boolean;
+  isOpen: boolean;
+  marketSeller: string | undefined;
+  loggedInUser: string | undefined;
+  onClickBuyItem: () => void;
+  onClickBuyItemOk: () => Promise<void>;
+}
+
+export default function MarketDetailUI(props: IProps) {
   return (
     <>
       <PageWrapper>
@@ -134,7 +149,7 @@ export default function MarketDetailUI(props) {
       </PageWrapper>
       <CommentWrite />
       <CommentList />
-      <ReComment />
+      <ReComment commentId={undefined} />
     </>
   );
 }

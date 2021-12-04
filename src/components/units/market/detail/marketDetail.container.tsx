@@ -1,5 +1,9 @@
-//@ts-nocheck
-import { useMutation, useQuery } from "@apollo/client";
+import {
+  DocumentNode,
+  OperationVariables,
+  useMutation,
+  useQuery,
+} from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ProductDetailUI from "./marketDetail.presenter";
@@ -8,33 +12,73 @@ import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
   DELETE_USEDITEM,
   FETCH_USEDITEM,
-  FETCH_USEDITEMS_I_PICKED,
   FETCH_USER_LOGGED_IN,
   TOGGLE_USEDITEM_PICK,
 } from "./marketDetail.queries";
+import { User } from "@sentry/types";
 
 declare const window: typeof globalThis & {
   kakao: any;
 };
 
-export default function MarketDetail() {
-  const [isModal, setIsModal] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+export interface IQueryData {
+  useditemId: string | string[] | undefined;
+  fetchUseditem: {
+    createdAt: number | any;
+    useditemAddress: {
+      useditemAddress: string;
+      addressDetail: string;
+      address: string;
+      lat: string;
+      lng: string;
+    };
+    remarks: string;
+    name: string;
+    pickedCount: number;
+    price: number;
+    contents: any;
+    tags: string;
+    images: string[];
 
-  const [toggleUseditemPick] = useMutation(TOGGLE_USEDITEM_PICK);
-  const [deleteUseditem] = useMutation(DELETE_USEDITEM);
-  const [createPointTransactionOfBuyingAndSelling] = useMutation(
-    CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING
+    seller: {
+      seller: string;
+      name: string;
+      _id: string;
+    };
+  };
+}
+
+export interface IQueryUserData {
+  FETCH_USER_LOGGED_IN: DocumentNode;
+  fetchUserLoggedIn: {
+    fetchUserLoggedIn: User;
+    _id: string;
+  };
+}
+
+export default function MarketDetail() {
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const [toggleUseditemPick] = useMutation<any, OperationVariables>(
+    TOGGLE_USEDITEM_PICK
   );
+  const [deleteUseditem] = useMutation<any, OperationVariables>(
+    DELETE_USEDITEM
+  );
+  const [createPointTransactionOfBuyingAndSelling] = useMutation<
+    any,
+    OperationVariables
+  >(CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING);
   const router = useRouter();
 
-  const { data } = useQuery(FETCH_USEDITEM, {
+  const { data } = useQuery<IQueryData>(FETCH_USEDITEM, {
     variables: { useditemId: router.query.id },
   });
 
-  const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
+  const { data: userData } = useQuery<IQueryUserData>(FETCH_USER_LOGGED_IN);
 
-  const marketSeller = data?.fetchUseditem.seller?._id;
+  const marketSeller = data?.fetchUseditem?.seller?._id;
   const loggedInUser = userData?.fetchUserLoggedIn._id;
 
   useEffect(() => {
@@ -85,7 +129,6 @@ export default function MarketDetail() {
               );
 
               // 결과값으로 받은 위치를 마커로 표시합니다
-
               const marker = new window.kakao.maps.Marker({
                 map: map,
                 position: coords,
@@ -107,8 +150,7 @@ export default function MarketDetail() {
     };
   });
 
-  //@ts-ignore
-  const onClickToggle = (event) => {
+  const onClickToggle = () => {
     try {
       toggleUseditemPick({
         variables: {
@@ -141,7 +183,7 @@ export default function MarketDetail() {
         //   });
         // },
       });
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
@@ -169,7 +211,7 @@ export default function MarketDetail() {
       });
       Modal.info({ content: "게시글이 삭제되었습니다." });
       router.push("/market/list");
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
@@ -191,7 +233,7 @@ export default function MarketDetail() {
       });
       router.push("/market/list");
       Modal.info({ content: "상품구매가 완료되었습니다." });
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
