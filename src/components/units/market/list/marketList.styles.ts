@@ -1,6 +1,9 @@
-//@ts-nocheck
 import styled from "@emotion/styled";
 import { FaHeart, FaUserCircle } from "react-icons/fa";
+
+interface IProps {
+  soldItem: boolean;
+}
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -128,7 +131,7 @@ export const Text01 = styled.div`
   font-size: 18px;
   font-weight: 500;
   padding-right: 20px;
-  color: ${(props) => (props.soldItem ? "" : "#1450f9")};
+  color: ${(props: IProps) => (props.soldItem ? "" : "#1450f9")};
   cursor: pointer;
 `;
 
@@ -136,7 +139,7 @@ export const Text02 = styled.div`
   font-size: 18px;
   font-weight: 500;
   padding-right: 20px;
-  color: ${(props) => (props.soldItem ? "#1450f9" : "")};
+  color: ${(props: IProps) => (props.soldItem ? "#1450f9" : "")};
   cursor: pointer;
 `;
 

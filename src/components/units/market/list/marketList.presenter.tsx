@@ -1,4 +1,3 @@
-// @ts-nocheck
 import ViewedProduct from "../../../commons/viewed-product/viewedproduct";
 import InfiniteScroll from "react-infinite-scroller";
 import { NumberWithCommas } from "../../../../commons/libraries/utils";
@@ -48,14 +47,33 @@ import {
   ProductHeartIcon,
   ProfileIcon,
 } from "./marketList.styles";
+import { IQueryData, IQueryNewData } from "./marketList.container";
+import { ChangeEvent } from "react";
 
-export default function MarketListUI(props) {
+interface IProps {
+  data: IQueryData | undefined;
+  newData: IQueryNewData | undefined;
+  onClickSubmit: () => void;
+  onClickBestProduct: (data: { data: string; _id: string }) => void;
+  onClickProduct: (data: { data: string; _id: string }) => void;
+  onLoadMore: () => void;
+  hasMore: boolean;
+  onClickSelling: () => void;
+  onClickSold: () => void;
+  soldItem: boolean;
+  onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+  keyword: string;
+  baskets: string | undefined;
+  viewedItem: boolean;
+}
+
+export default function MarketListUI(props: IProps) {
   return (
     <PageWrapper>
       <Wrapper>
         <Title>베스트상품</Title>
         <BestProductWrapper>
-          {props.newData?.fetchUseditemsOfTheBest.map((data, index) => (
+          {props.newData?.fetchUseditemsOfTheBest.map((data: string | any) => (
             <BestProduct
               key={data._id}
               onClick={() => props.onClickBestProduct(data)}
@@ -103,7 +121,7 @@ export default function MarketListUI(props) {
                 onChange={props.onChangeSearch}
               />
               {/* <SearchDate>2020.12.02 ~ 2020.12.02</SearchDate> */}
-              <SearchButton onClick={props.onClickSearch}>검색</SearchButton>
+              <SearchButton>검색</SearchButton>
             </SearchWrapper>
           </TopWrapper>
           <InfiniteScrollWrapper>
@@ -119,7 +137,7 @@ export default function MarketListUI(props) {
                 }
                 useWindow={false}
               >
-                {props.data?.fetchUseditems.map((data) => (
+                {props.data?.fetchUseditems.map((data: string | any) => (
                   <ProductWrapper
                     key={data._id}
                     onClick={() => props.onClickProduct(data)}
@@ -137,7 +155,7 @@ export default function MarketListUI(props) {
                           {data.name
                             .replaceAll(props.keyword, `$!${props.keyword}$!`)
                             .split("$!")
-                            .map((keywordData, index) => (
+                            .map((keywordData: string | any, index: number) => (
                               <Keyword
                                 id={keywordData._id}
                                 key={index}
@@ -177,7 +195,7 @@ export default function MarketListUI(props) {
                 }
                 useWindow={false}
               >
-                {props.data?.fetchUseditems.map((data) => (
+                {props.data?.fetchUseditems.map((data: string | any) => (
                   <ProductWrapper
                     key={data._id}
                     onClick={() => props.onClickProduct(data)}
@@ -195,7 +213,7 @@ export default function MarketListUI(props) {
                           {data.name
                             .replaceAll(props.keyword, `$!${props.keyword}$!`)
                             .split("$!")
-                            .map((keywordData, index) => (
+                            .map((keywordData: string | any, index: number) => (
                               <Keyword
                                 id={keywordData._id}
                                 key={index}

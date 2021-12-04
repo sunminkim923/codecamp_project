@@ -1,4 +1,8 @@
-import { useQuery } from "@apollo/client";
+import {
+  FetchMoreQueryOptions,
+  OperationVariables,
+  useQuery,
+} from "@apollo/client";
 import { useRouter } from "next/router";
 import { ChangeEvent, useEffect, useState } from "react";
 import MarketListUI from "./marketList.presenter";
@@ -8,24 +12,35 @@ import {
 } from "./marketList.queries";
 import _ from "lodash";
 
+export interface IQueryData {
+  data: string;
+  fetchUseditems: string[];
+}
+
+export interface IQueryNewData {
+  newData: string;
+  fetchUseditemsOfTheBest: string[];
+}
+
 export default function MarketList() {
   const router = useRouter();
 
-  const [soldItem, setSoldItem] = useState(false);
-  const [keyword, setKeyword] = useState("");
+  const [soldItem, setSoldItem] = useState<boolean>(false);
+  const [keyword, setKeyword] = useState<string>("");
 
-  const [baskets, setBaskets] = useState();
-  const [viewedItem, setViewedItem] = useState(true);
+  const [baskets, setBaskets] = useState<string>();
+  const [viewedItem, setViewedItem] = useState<boolean>(true);
+  const [hasMore, setHasMore] = useState<boolean>(true);
 
-  const { data, fetchMore, refetch } = useQuery(FETCH_USEDITEMS, {
+  const { data, fetchMore, refetch } = useQuery<IQueryData>(FETCH_USEDITEMS, {
     variables: {
       isSoldout: soldItem,
     },
   });
 
-  const { data: newData } = useQuery(FETCH_USEDITEMS_OF_THE_BEST);
-
-  const [hasMore, setHasMore] = useState(true);
+  const { data: newData } = useQuery<IQueryNewData>(
+    FETCH_USEDITEMS_OF_THE_BEST
+  );
 
   const onClickSelling = () => {
     setSoldItem(false);
@@ -39,7 +54,7 @@ export default function MarketList() {
     router.push("./write/");
   };
 
-  const onClickBestProduct = (data: any) => {
+  const onClickBestProduct = (data: { data: string; _id: string }) => {
     router.push(`./detail/${data._id}`);
   };
 
@@ -48,7 +63,7 @@ export default function MarketList() {
     setBaskets(items);
   }, []);
 
-  const onClickProduct = (data: any) => {
+  const onClickProduct = (data: { data: string; _id: string }) => {
     setViewedItem(false);
 
     // ===========
@@ -79,12 +94,12 @@ export default function MarketList() {
 
     fetchMore({
       variables: { page: Math.floor(data?.fetchUseditems.length / 10) + 1 },
+      //@ts-ignore
       updateQuery: (prev, { fetchMoreResult }) => {
         //@ts-ignore
         if (!fetchMoreResult.fetchUseditems.length) setHasMore(false);
         return {
           fetchUseditems: [
-            //@ts-ignore
             ...prev.fetchUseditems,
             //@ts-ignore
             ...fetchMoreResult.fetchUseditems,
@@ -95,7 +110,6 @@ export default function MarketList() {
   };
 
   const getDebounce = _.debounce((data) => {
-    //@ts-ignore
     refetch({ search: data });
   }, 500);
 
