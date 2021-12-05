@@ -1,3 +1,12 @@
+import { ChangeEventHandler } from "react";
+import {
+  DeepMap,
+  FieldError,
+  FieldValues,
+  FormState,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
 import {
   Wrapper,
   Title,
@@ -10,7 +19,19 @@ import {
   Error,
 } from "./myprofile.styles";
 
-export default function MyProfilePageUI(props: any) {
+interface IProps {
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  formState: FormState<FieldValues>;
+  onSubmit: (data: {
+    newPassword: string;
+    newPasswordConfirm: string;
+  }) => Promise<void>;
+  errors: DeepMap<FieldValues, FieldError>;
+  isActive: boolean;
+}
+
+export default function MyProfilePageUI(props: IProps) {
   return (
     <>
       <form onSubmit={props.handleSubmit(props.onSubmit)}>
@@ -33,6 +54,7 @@ export default function MyProfilePageUI(props: any) {
               <Input
                 type="password"
                 placeholder="새 비밀번호를 입력해주세요"
+                //@ts-ignore
                 onChange={props.onChangeNewPassword}
                 {...props.register("newPassword")}
               />
@@ -45,6 +67,7 @@ export default function MyProfilePageUI(props: any) {
               <Input
                 type="password"
                 placeholder="새 비밀번호를 확인해주세요"
+                //@ts-ignore
                 onChange={props.onChangeNewPassowrdConfirm}
                 {...props.register("newPasswordConfirm")}
               />

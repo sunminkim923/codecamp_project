@@ -29,9 +29,51 @@ import {
 } from "./marketWrite.styles";
 import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
+import {
+  DeepMap,
+  FieldError,
+  FieldValues,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import { Dispatch, SetStateAction } from "react";
 
-// @ts-ignore
-export default function MarketWriteUI(props) {
+interface IProps {
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  onSubmit: (data: {
+    data: string;
+    productName: string;
+    productCharacter: string;
+    productExplanation: string;
+    price: number;
+    tags: string;
+    addressDetail: string;
+  }) => Promise<void>;
+  onEdit: (data: {
+    data: string;
+    address: string;
+    addressDetail: string;
+    productName: string;
+    productCharacter: string;
+    productExplanation: string;
+    price: number;
+    tags: string;
+  }) => Promise<void>;
+  errors: DeepMap<FieldValues, FieldError>;
+  isActive: boolean;
+  isEdit: boolean;
+  data: any;
+  setImageFile: Dispatch<SetStateAction<string[]>>;
+  onClickSearchAddress: () => void;
+  isModal: boolean;
+  onClickCancel: () => void;
+  onComplete: (data: { data: string; address: string }) => void;
+  address: string;
+  onChangeAddress: (data: string) => void;
+}
+
+export default function MarketWriteUI(props: IProps) {
   return (
     <PageWrapper>
       <Wrapper>
@@ -107,6 +149,7 @@ export default function MarketWriteUI(props) {
                       onOk={props.onClickCancel}
                       onCancel={props.onClickCancel}
                     >
+                      {/* @ts-ignore */}
                       <DaumPostcode onComplete={props.onComplete} autoClose />
                     </Modal>
                   )}

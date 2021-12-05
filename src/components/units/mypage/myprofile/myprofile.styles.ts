@@ -1,4 +1,3 @@
-//@ts-nocheck
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
@@ -48,8 +47,9 @@ export const ChangeButton = styled.button`
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
-  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
-  color: ${(props) => (props.isActive ? "#ffffff" : "")} ;
+  background-color: ${(props: { isActive: boolean }) =>
+    props.isActive ? "#1450f9" : ""};
+  color: ${(props: { isActive: boolean }) => (props.isActive ? "#ffffff" : "")};
 `;
 
 export const InputBox = styled.div``;

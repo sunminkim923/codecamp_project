@@ -1,16 +1,17 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import {} from "react";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import MyProfilePageUI from "./myprofile.presenter";
 import * as yup from "yup";
 import { useMutation } from "@apollo/client";
 import { RESET_USER_PASSWORD } from "./myprofile.queries";
 import { useRouter } from "next/router";
+import { IMutation } from "../../../../commons/typs/generated/types";
 
 export default function MyProfilePage() {
   const router = useRouter();
 
-  const [resetUserPassword] = useMutation(RESET_USER_PASSWORD);
+  const [resetUserPassword] = useMutation<IMutation>(RESET_USER_PASSWORD);
 
   const schema = yup.object().shape({
     password: yup.string().required("현재 비밀번호를 입력하세요."),
@@ -34,12 +35,18 @@ export default function MyProfilePage() {
       ),
   });
 
-  const { handleSubmit, register, formState, reset } = useForm<any>({
+  const { handleSubmit, register, formState, reset } = useForm<
+    FieldValues,
+    object
+  >({
     mode: "onChange",
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: {
+    newPassword: string;
+    newPasswordConfirm: string;
+  }) => {
     if (data.newPassword !== data.newPasswordConfirm) {
       alert("비밀번호가 일치하지 않습니다");
       return;
@@ -52,7 +59,7 @@ export default function MyProfilePage() {
       });
       alert("비밀번호가 변경되었습니다.");
       reset();
-    } catch (error: any) {
+    } catch (error: unknown | any) {
       alert(error.message);
     }
   };

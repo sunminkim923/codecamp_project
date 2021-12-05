@@ -11,16 +11,7 @@ import {
   FETCH_USEDITEMS_OF_THE_BEST,
 } from "./marketList.queries";
 import _ from "lodash";
-
-export interface IQueryData {
-  data: string;
-  fetchUseditems: string[];
-}
-
-export interface IQueryNewData {
-  newData: string;
-  fetchUseditemsOfTheBest: string[];
-}
+import { IQuery } from "../../../../commons/typs/generated/types";
 
 export default function MarketList() {
   const router = useRouter();
@@ -32,15 +23,13 @@ export default function MarketList() {
   const [viewedItem, setViewedItem] = useState<boolean>(true);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
-  const { data, fetchMore, refetch } = useQuery<IQueryData>(FETCH_USEDITEMS, {
+  const { data, fetchMore, refetch } = useQuery<IQuery>(FETCH_USEDITEMS, {
     variables: {
       isSoldout: soldItem,
     },
   });
 
-  const { data: newData } = useQuery<IQueryNewData>(
-    FETCH_USEDITEMS_OF_THE_BEST
-  );
+  const { data: newData } = useQuery<IQuery>(FETCH_USEDITEMS_OF_THE_BEST);
 
   const onClickSelling = () => {
     setSoldItem(false);

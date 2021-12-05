@@ -47,12 +47,13 @@ import {
   ProductHeartIcon,
   ProfileIcon,
 } from "./marketList.styles";
-import { IQueryData, IQueryNewData } from "./marketList.container";
+
 import { ChangeEvent } from "react";
+import { IQuery } from "../../../../commons/typs/generated/types";
 
 interface IProps {
-  data: IQueryData | undefined;
-  newData: IQueryNewData | undefined;
+  data: IQuery | undefined;
+  newData: IQuery | undefined;
   onClickSubmit: () => void;
   onClickBestProduct: (data: { data: string; _id: string }) => void;
   onClickProduct: (data: { data: string; _id: string }) => void;

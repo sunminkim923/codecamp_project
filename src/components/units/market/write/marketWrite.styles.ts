@@ -1,4 +1,3 @@
-//@ts-nocheck
 import styled from "@emotion/styled";
 
 export const PageWrapper = styled.div`
@@ -132,8 +131,9 @@ export const SubmitButton = styled.button`
   border: none;
   background-color: #bdbdbd;
   margin-top: 80px;
-  background-color: ${(props) => (props.isActive ? "#1450f9" : "")};
-  color: ${(props) => (props.isActive ? "#ffffff" : "")};
+  background-color: ${(props: { isActive: boolean }) =>
+    props.isActive ? "#1450f9" : ""};
+  color: ${(props: { isActive: boolean }) => (props.isActive ? "#ffffff" : "")};
   font-size: 16px;
   font-weight: 500;
 `;

@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { useForm } from "react-hook-form";
 import MarketWriteUI from "./marketWrite.presenter";
 import * as yup from "yup";
@@ -13,6 +12,7 @@ import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { FETCH_USEDITEM } from "../detail/marketDetail.queries";
 import { useEffect, useState } from "react";
+import { IMutation } from "../../../../commons/typs/generated/types";
 
 const schema = yup.object().shape({
   productName: yup.string().required("상품명을 입력하세요"),
@@ -28,21 +28,46 @@ const schema = yup.object().shape({
   addressDetail: yup.string().required("상세주소를 입력하세요"),
 });
 
-export default function MarketWrite(props) {
+declare const window: typeof globalThis & {
+  kakao: any;
+};
+interface IProps {
+  isEdit: boolean;
+  data: {
+    data: string;
+    fetchUseditem: {
+      fetchUseditem: string;
+      name: string;
+      remarks: string;
+      contents: string;
+      price: number;
+      tags: string;
+      useditemAddress: {
+        useditemAddress: string;
+        address: string;
+        addressDetail: string;
+        lat: string;
+        lng: string;
+      };
+    };
+  };
+}
+
+export default function MarketWrite(props: IProps) {
   const router = useRouter();
-  const [createUseditem] = useMutation(CREATE_USEDITEM);
-  const [updateUseditem] = useMutation(UPDATE_USEDITEM);
+  const [createUseditem] = useMutation<IMutation>(CREATE_USEDITEM);
+  const [updateUseditem] = useMutation<IMutation>(UPDATE_USEDITEM);
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
-  const [imageFile, setImageFile] = useState([]);
-  const [isModal, setIsModal] = useState(false);
-  const [address, setAddress] = useState(
+  const [imageFile, setImageFile] = useState<string[]>([]);
+  const [isModal, setIsModal] = useState<boolean>(false);
+  const [address, setAddress] = useState<string>(
     props.data?.fetchUseditem.useditemAddress.address || ""
   );
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
+  const [lat, setLat] = useState<string>();
+  const [lng, setLng] = useState<string>();
 
-  const [addressDetail, setAddressDetail] = useState(
+  const [addressDetail, setAddressDetail] = useState<string>(
     props.data?.fetchUseditem.useditemAddress.addressDetail || ""
   );
   const { data } = useQuery(FETCH_USEDITEM, {
@@ -82,7 +107,15 @@ export default function MarketWrite(props) {
     resolver: yupResolver(schema),
   });
 
-  async function onSubmit(data) {
+  async function onSubmit(data: {
+    data: string;
+    productName: string;
+    productCharacter: string;
+    productExplanation: string;
+    price: number;
+    tags: string;
+    addressDetail: string;
+  }) {
     try {
       const resultFiles = await Promise.all(
         imageFile.map((fileData) =>
@@ -114,13 +147,21 @@ export default function MarketWrite(props) {
       });
       Modal.info({ content: "게시물이 등록되었습니다." });
       router.push(`./detail/${result.data?.createUseditem._id}`);
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   }
 
-  //@ts-ignore
-  const onEdit = async (data) => {
+  const onEdit = async (data: {
+    data: string;
+    address: string;
+    addressDetail: string;
+    productName: string;
+    productCharacter: string;
+    productExplanation: string;
+    price: number;
+    tags: string;
+  }) => {
     try {
       const resultFiles = await Promise.all(
         imageFile.map((fileData) =>
@@ -155,7 +196,7 @@ export default function MarketWrite(props) {
       });
       Modal.info({ content: "게시글이 수정되었습니다." });
       router.push(`/market/detail/${result.data?.updateUseditem._id}`);
-    } catch (error) {
+    } catch (error: unknown | any) {
       Modal.error({ content: error.message });
     }
   };
@@ -168,14 +209,13 @@ export default function MarketWrite(props) {
     setIsModal(false);
   };
 
-  const onChangeAddress = (data) => {
+  const onChangeAddress = (data: string) => {
     setAddress(data);
   };
 
-  const onComplete = (data) => {
+  const onComplete = (data: { data: string; address: string }) => {
     setAddress(data.address);
     setValue("address", data.address);
-    // @ts-ignore
     trigger("address");
     setIsModal(false);
   };
